@@ -4,6 +4,8 @@
 
 Bobtention runs as a set of [IBM Bob](https://www.ibm.com/bob) hook scripts. It tracks the trajectory of every Bob coding session — task alignment, progress, scope, action impact, and uncertainty — and routes attention using an **Allow / Watch / Block** decision model. When Bob is working normally Bobtention stays invisible. When Bob gets stuck, drifts off task, or reaches a high-impact action, Bobtention stops Bob and explains why.
 
+![Bobtention demo](assets/bobtention_demo.png)
+
 ---
 
 ## How It Works
