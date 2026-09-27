@@ -123,6 +123,10 @@ export function activate(context: vscode.ExtensionContext) {
           }
         }
 
+        // Use the absolute Node.js binary path so hooks work in Bob's
+        // non-interactive shell environment where PATH is not inherited.
+        const nodeBin = process.execPath;
+
         const sessionStartJs = path.join(hooksDir, 'session-start.js');
         const userPromptSubmitJs = path.join(hooksDir, 'user-prompt-submit.js');
         const preToolUseJs = path.join(hooksDir, 'pre-tool-use.js');
@@ -137,7 +141,7 @@ export function activate(context: vscode.ExtensionContext) {
               hooks: [
                 {
                   type: 'command',
-                  command: `node "${sessionStartJs}"`,
+                  command: `"${nodeBin}" "${sessionStartJs}"`,
                   timeout: 5,
                 },
               ],
@@ -149,7 +153,7 @@ export function activate(context: vscode.ExtensionContext) {
               hooks: [
                 {
                   type: 'command',
-                  command: `node "${userPromptSubmitJs}"`,
+                  command: `"${nodeBin}" "${userPromptSubmitJs}"`,
                   timeout: 5,
                 },
               ],
@@ -161,7 +165,7 @@ export function activate(context: vscode.ExtensionContext) {
               hooks: [
                 {
                   type: 'command',
-                  command: `node "${preToolUseJs}"`,
+                  command: `"${nodeBin}" "${preToolUseJs}"`,
                   timeout: 10,
                 },
               ],
@@ -173,7 +177,7 @@ export function activate(context: vscode.ExtensionContext) {
               hooks: [
                 {
                   type: 'command',
-                  command: `node "${postToolUseJs}"`,
+                  command: `"${nodeBin}" "${postToolUseJs}"`,
                   timeout: 5,
                 },
               ],
@@ -185,7 +189,7 @@ export function activate(context: vscode.ExtensionContext) {
               hooks: [
                 {
                   type: 'command',
-                  command: `node "${stopJs}"`,
+                  command: `"${nodeBin}" "${stopJs}"`,
                   timeout: 5,
                 },
               ],

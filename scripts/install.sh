@@ -85,15 +85,24 @@ mkdir -p "$BOB_DIR"
 # Resolve path to dist/hooks relative to the target workspace
 HOOKS_DIR="$BOBTENTION_DIR/dist/hooks"
 
+# Resolve absolute node path so hooks work in Bob's non-interactive shell (no PATH)
+NODE_BIN="$(which node)"
+if [ -z "$NODE_BIN" ]; then
+  echo "ERROR: node not found in PATH. Install Node.js ≥18 and re-run." >&2
+  exit 1
+fi
+echo "        node binary : $NODE_BIN"
+echo ""
+
 # All hooks use the matcher-wrapped structure (README.md / Bob hook contract).
 HOOK_COMMANDS=$(cat << EOF
 {
   "hooks": {
-    "SessionStart": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "node $HOOKS_DIR/session-start.js", "timeout": 5 }] }],
-    "UserPromptSubmit": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "node $HOOKS_DIR/user-prompt-submit.js", "timeout": 5 }] }],
-    "PreToolUse": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "node $HOOKS_DIR/pre-tool-use.js", "timeout": 10 }] }],
-    "PostToolUse": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "node $HOOKS_DIR/post-tool-use.js", "timeout": 5 }] }],
-    "Stop": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "node $HOOKS_DIR/stop.js", "timeout": 5 }] }]
+    "SessionStart": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "$NODE_BIN $HOOKS_DIR/session-start.js", "timeout": 5 }] }],
+    "UserPromptSubmit": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "$NODE_BIN $HOOKS_DIR/user-prompt-submit.js", "timeout": 5 }] }],
+    "PreToolUse": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "$NODE_BIN $HOOKS_DIR/pre-tool-use.js", "timeout": 10 }] }],
+    "PostToolUse": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "$NODE_BIN $HOOKS_DIR/post-tool-use.js", "timeout": 5 }] }],
+    "Stop": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "$NODE_BIN $HOOKS_DIR/stop.js", "timeout": 5 }] }]
   }
 }
 EOF
