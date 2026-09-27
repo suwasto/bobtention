@@ -55,6 +55,15 @@ Developer prompt
 
 ### Quick install (any Bob workspace)
 
+**Option A — Bob IDE plugin (recommended):**
+
+1. Open the Bob IDE.
+2. Navigate to the **Extensions / Plugins** panel.
+3. Search for **Bobtention** and click **Install**.
+4. Open your workspace — Bobtention hooks are applied automatically.
+
+**Option B — shell installer:**
+
 ```bash
 # From the Bobtention repo root:
 ./scripts/install.sh /path/to/your-workspace
