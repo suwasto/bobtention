@@ -1,0 +1,48 @@
+{
+  "name": "bobtention-vscode",
+  "displayName": "Bobtention",
+  "description": "One-click attention routing and guardrails setup for IBM Bob",
+  "version": "0.1.0",
+  "publisher": "bobtention",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobtention/bobtention"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "bobtention.initializeWorkspace",
+        "title": "Bobtention: Initialize Workspace",
+        "category": "Bobtention"
+      },
+      {
+        "command": "bobtention.removeHooks",
+        "title": "Bobtention: Remove Hooks from Workspace",
+        "category": "Bobtention"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run copy-runtime && npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "copy-runtime": "node ./scripts/copy-runtime.js",
+    "package": "npm run vscode:prepublish && npx @vscode/vsce package --no-git-tag-version"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.2.0",
+    "typescript": "^5.4.5"
+  }
+}

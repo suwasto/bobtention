@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bobtention — Decision Viewer</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      background: #f7f8fa;
+      color: #1f2328;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #1f2328;
+      color: #fff;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    header h1 { font-size: 16px; font-weight: 600; letter-spacing: 0.02em; }
+    header span { font-size: 12px; color: #8b949e; }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 24px 16px; }
+
+    /* Drop zone */
+    #drop-zone {
+      border: 2px dashed #d0d7de;
+      border-radius: 8px;
+      padding: 48px 24px;
+      text-align: center;
+      background: #fff;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    #drop-zone.drag-over { border-color: #3b82d4; background: #eff6ff; }
+    #drop-zone p { color: #57606a; margin-top: 8px; font-size: 13px; }
+    #drop-zone label {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 7px 16px;
+      background: #3b82d4;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    #drop-zone label:hover { background: #2563eb; }
+    #file-input { display: none; }
+
+    /* Session meta */
+    #session-meta {
+      display: none;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+    #session-meta h2 { font-size: 14px; font-weight: 600; margin-bottom: 10px; color: #57606a; text-transform: uppercase; letter-spacing: 0.06em; }
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+    .meta-item label { display: block; font-size: 11px; color: #57606a; text-transform: uppercase; letter-spacing: 0.06em; }
+    .meta-item span { font-size: 13px; font-weight: 500; word-break: break-all; }
+
+    /* Stats bar */
+    #stats-bar {
+      display: none;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    #stats-bar.visible { display: flex; flex-wrap: wrap; }
+    .stat-chip {
+      flex: 1 1 100px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px 16px;
+      text-align: center;
+    }
+    .stat-chip .num { font-size: 26px; font-weight: 700; }
+    .stat-chip .lbl { font-size: 11px; color: #57606a; text-transform: uppercase; letter-spacing: 0.06em; }
+    .stat-chip.allow .num { color: #16a34a; }
+    .stat-chip.watch .num { color: #d97706; }
+    .stat-chip.block .num { color: #dc2626; }
+    .stat-chip.neutral .num { color: #3b82d4; }
+
+    /* Timeline */
+    #timeline { display: none; }
+    #timeline h2 { font-size: 13px; font-weight: 600; color: #57606a; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px; }
+
+    .timeline-row {
+      display: flex;
+      gap: 0;
+      margin-bottom: 8px;
+      align-items: flex-start;
+    }
+    .tl-left {
+      width: 56px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 12px;
+    }
+    .tl-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 3px 7px;
+      border-radius: 4px;
+      color: #fff;
+      min-width: 48px;
+      text-align: center;
+    }
+    .tl-badge.ALLOW { background: #16a34a; }
+    .tl-badge.WATCH { background: #d97706; }
+    .tl-badge.BLOCK { background: #dc2626; }
+
+    .tl-line {
+      width: 2px;
+      flex: 1;
+      background: #e5e7eb;
+      margin-top: 4px;
+      min-height: 16px;
+    }
+    .tl-card {
+      flex: 1;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-left: 10px;
+    }
+    .tl-card.BLOCK { border-left: 3px solid #dc2626; }
+    .tl-card.WATCH { border-left: 3px solid #d97706; }
+    .tl-card.ALLOW { border-left: 3px solid #16a34a; }
+
+    .tl-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+    .tl-reason { font-size: 13px; color: #1f2328; line-height: 1.4; }
+    .tl-time { font-size: 11px; color: #8b949e; white-space: nowrap; margin-left: 12px; }
+    .tl-confidence { font-size: 11px; color: #57606a; margin-top: 4px; }
+
+    .signal-pills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+    .signal-pill {
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 100px;
+      background: #f0f4ff;
+      color: #3b5bdb;
+      font-weight: 500;
+    }
+
+    /* Signals section */
+    #signals-section { display: none; margin-top: 24px; }
+    #signals-section h2 { font-size: 13px; font-weight: 600; color: #57606a; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px; }
+    .signal-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+    }
+    .signal-type { font-size: 12px; font-weight: 600; min-width: 160px; color: #1f2328; }
+    .signal-bar-wrap { flex: 1; background: #f3f4f6; border-radius: 4px; height: 8px; overflow: hidden; }
+    .signal-bar { height: 100%; border-radius: 4px; background: #3b82d4; }
+    .signal-bar.high { background: #dc2626; }
+    .signal-bar.med { background: #d97706; }
+    .signal-bar.low { background: #16a34a; }
+    .signal-sev { font-size: 12px; color: #57606a; min-width: 36px; text-align: right; }
+    .signal-detail { font-size: 11px; color: #8b949e; flex-basis: 100%; margin-top: 2px; }
+
+    #reload-btn {
+      display: none;
+      margin-top: 24px;
+      padding: 7px 16px;
+      background: #f3f4f6;
+      color: #1f2328;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    #reload-btn:hover { background: #e5e7eb; }
+
+    .empty { color: #8b949e; font-size: 13px; padding: 12px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bobtention — Decision Viewer</h1>
+    <span>Load a session JSON to inspect the agent decision trail</span>
+  </header>
+
+  <div class="container">
+    <div id="drop-zone">
+      <div style="font-size: 32px;">📂</div>
+      <p><strong>Drop a session JSON here</strong><br>or click to pick a file</p>
+      <label for="file-input">Browse file</label>
+      <input type="file" id="file-input" accept=".json" />
+    </div>
+
+    <div id="session-meta">
+      <h2>Session</h2>
+      <div class="meta-grid" id="meta-grid"></div>
+    </div>
+
+    <div id="stats-bar">
+      <div class="stat-chip allow"><div class="num" id="cnt-allow">0</div><div class="lbl">Allow</div></div>
+      <div class="stat-chip watch"><div class="num" id="cnt-watch">0</div><div class="lbl">Watch</div></div>
+      <div class="stat-chip block"><div class="num" id="cnt-block">0</div><div class="lbl">Block</div></div>
+      <div class="stat-chip neutral"><div class="num" id="cnt-actions">0</div><div class="lbl">Actions</div></div>
+      <div class="stat-chip neutral"><div class="num" id="cnt-signals">0</div><div class="lbl">Signals</div></div>
+    </div>
+
+    <div id="timeline"><h2>Decision Trail</h2><div id="timeline-inner"></div></div>
+
+    <div id="signals-section"><h2>Signals Raised</h2><div id="signals-inner"></div></div>
+
+    <button id="reload-btn" onclick="resetView()">← Load another file</button>
+  </div>
+
+  <script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+
+    dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+    dropZone.addEventListener('drop', e => {
+      e.preventDefault();
+      dropZone.classList.remove('drag-over');
+      const file = e.dataTransfer.files[0];
+      if (file) readFile(file);
+    });
+    fileInput.addEventListener('change', e => {
+      const file = e.target.files[0];
+      if (file) readFile(file);
+    });
+
+    function readFile(file) {
+      const reader = new FileReader();
+      reader.onload = ev => {
+        try {
+          const session = JSON.parse(ev.target.result);
+          render(session);
+        } catch {
+          alert('Could not parse JSON. Make sure this is a Bobtention session file.');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function fmt(ts) {
+      if (!ts) return '—';
+      const d = new Date(ts);
+      return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    }
+    function elapsed(ms) {
+      const s = Math.floor(ms / 1000);
+      if (s < 60) return s + 's';
+      return Math.floor(s / 60) + 'm ' + (s % 60) + 's';
+    }
+    function esc(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function render(s) {
+      dropZone.style.display = 'none';
+
+      // Meta
+      const meta = document.getElementById('session-meta');
+      const grid = document.getElementById('meta-grid');
+      const dur = s.startTime ? (Date.now() - s.startTime) : null;
+      grid.innerHTML = [
+        ['Session ID', s.sessionId || '—'],
+        ['Status', s.status || '—'],
+        ['Intent', s.originalIntent || '(none)'],
+        ['Started', fmt(s.startTime)],
+        ['Duration', dur ? elapsed(dur) : '—'],
+      ].map(([l, v]) => `<div class="meta-item"><label>${esc(l)}</label><span>${esc(v)}</span></div>`).join('');
+      meta.style.display = 'block';
+
+      // Stats
+      const decisions = Array.isArray(s.decisions) ? s.decisions : [];
+      const signals = Array.isArray(s.signals) ? s.signals : [];
+      const actions = Array.isArray(s.actions) ? s.actions : [];
+      const allow = decisions.filter(d => d.decision === 'ALLOW').length;
+      const watch = decisions.filter(d => d.decision === 'WATCH').length;
+      const block = decisions.filter(d => d.decision === 'BLOCK').length;
+      document.getElementById('cnt-allow').textContent = allow;
+      document.getElementById('cnt-watch').textContent = watch;
+      document.getElementById('cnt-block').textContent = block;
+      document.getElementById('cnt-actions').textContent = actions.length;
+      document.getElementById('cnt-signals').textContent = signals.length;
+      const statsBar = document.getElementById('stats-bar');
+      statsBar.classList.add('visible');
+
+      // Timeline
+      const tl = document.getElementById('timeline');
+      const tlInner = document.getElementById('timeline-inner');
+      if (decisions.length === 0) {
+        tlInner.innerHTML = '<p class="empty">No decisions recorded yet.</p>';
+      } else {
+        tlInner.innerHTML = decisions.map((d, i) => {
+          const dec = d.decision || 'ALLOW';
+          const conf = typeof d.confidence === 'number' ? (d.confidence * 100).toFixed(0) + '%' : '—';
+          const pills = Array.isArray(d.signals) && d.signals.length
+            ? `<div class="signal-pills">${d.signals.map(sig => `<span class="signal-pill">${esc(sig)}</span>`).join('')}</div>`
+            : '';
+          const isLast = i === decisions.length - 1;
+          return `
+            <div class="timeline-row">
+              <div class="tl-left">
+                <span class="tl-badge ${dec}">${esc(dec)}</span>
+                ${!isLast ? '<div class="tl-line"></div>' : ''}
+              </div>
+              <div class="tl-card ${dec}">
+                <div class="tl-card-top">
+                  <span class="tl-reason">${esc(d.reason || '(no reason)')}</span>
+                  <span class="tl-time">${fmt(d.timestamp)}</span>
+                </div>
+                <div class="tl-confidence">Confidence: <strong>${conf}</strong></div>
+                ${pills}
+              </div>
+            </div>`;
+        }).join('');
+      }
+      tl.style.display = 'block';
+
+      // Signals
+      const sigSec = document.getElementById('signals-section');
+      const sigInner = document.getElementById('signals-inner');
+      if (signals.length === 0) {
+        sigInner.innerHTML = '<p class="empty">No signals raised.</p>';
+      } else {
+        sigInner.innerHTML = signals.map(sig => {
+          const sev = typeof sig.severity === 'number' ? sig.severity : 0;
+          const pct = Math.round(sev * 100);
+          const cls = sev >= 0.7 ? 'high' : sev >= 0.4 ? 'med' : 'low';
+          const detail = sig.detail ? `<span class="signal-detail">${esc(sig.detail)}</span>` : '';
+          return `
+            <div class="signal-row">
+              <span class="signal-type">${esc(sig.type || '?')}</span>
+              <div class="signal-bar-wrap"><div class="signal-bar ${cls}" style="width:${pct}%"></div></div>
+              <span class="signal-sev">${pct}%</span>
+              ${detail}
+            </div>`;
+        }).join('');
+      }
+      sigSec.style.display = 'block';
+
+      document.getElementById('reload-btn').style.display = 'inline-block';
+    }
+
+    function resetView() {
+      dropZone.style.display = '';
+      document.getElementById('session-meta').style.display = 'none';
+      document.getElementById('stats-bar').classList.remove('visible');
+      document.getElementById('timeline').style.display = 'none';
+      document.getElementById('signals-section').style.display = 'none';
+      document.getElementById('reload-btn').style.display = 'none';
+      document.getElementById('timeline-inner').innerHTML = '';
+      document.getElementById('signals-inner').innerHTML = '';
+      fileInput.value = '';
+    }
+  </script>
+</body>
+</html>
