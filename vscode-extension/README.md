@@ -10,6 +10,15 @@ One-click workspace setup and hook management for [Bobtention](https://github.co
   - Prepares `~/.bobtention/` and workspace session/log storage.
 - **Hook Removal / Reset:** Run `Bobtention: Remove Hooks from Workspace` to cleanly detach Bobtention from your `.bob/settings.json` without altering other settings.
 
+## Quick Install (any Bob workspace)
+
+Install the **Bobtention** plugin directly from the Bob IDE:
+
+1. Open the Bob IDE.
+2. Navigate to the **Extensions / Plugins** panel.
+3. Search for **Bobtention** and click **Install**.
+4. Open your workspace — Bobtention hooks are applied automatically.
+
 ## Usage
 
 1. Open your project folder in VS Code.
