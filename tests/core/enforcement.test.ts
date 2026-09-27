@@ -244,10 +244,10 @@ describe('formatBlock', () => {
     expect(msg).toContain('concern detected after action');
   });
 
-  it('includes "The next action has been blocked" for both sources', () => {
+  it('includes a proceed-confirmation prompt for pre-action and a block notice for post-action', () => {
     const prePre = formatBlock(blockContract(), makeState(), toolEvent(), 'pre-action');
     const prePost = formatBlock(blockContract(), makeState(), toolEvent(), 'post-action');
-    expect(prePre).toContain('The next action has been blocked');
+    expect(prePre).toContain('please ask the human to confirm whether to proceed');
     expect(prePost).toContain('The next action has been blocked');
   });
 });

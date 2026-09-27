@@ -96,9 +96,9 @@ export function formatBlock(
 
   lines.push('');
   if (source === 'post-action') {
-    lines.push('The next action has been blocked.');
+    lines.push('The next action has been blocked. Please ask the human whether to proceed before continuing.');
   } else {
-    lines.push('The next action has been blocked.');
+    lines.push('Action paused — please ask the human to confirm whether to proceed.');
   }
 
   return lines.join('\n');

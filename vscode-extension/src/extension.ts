@@ -2,6 +2,7 @@ import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as os from 'os';
+import { execFileSync } from 'child_process';
 
 /**
  * Resolves the directory containing the compiled Bobtention hook scripts.
@@ -23,6 +24,49 @@ function resolveHooksDirectory(extensionPath: string, workspaceRoot: string): st
   const workspaceHooks = path.join(workspaceRoot, 'dist', 'hooks');
   if (fs.existsSync(path.join(workspaceHooks, 'session-start.js'))) {
     return workspaceHooks;
+  }
+
+  return null;
+}
+
+/**
+ * Resolves the absolute path to the `node` binary.
+ *
+ * Bob hooks run in a non-interactive shell with no PATH, so bare `node`
+ * silently fails. process.execPath is intentionally NOT used — in Bob IDE
+ * (Electron) it points to the Electron helper binary, not Node.
+ *
+ * Resolution order:
+ *   1. `which node` via a login shell — picks up nvm / volta / homebrew
+ *   2. Well-known fixed install paths on macOS / Linux
+ */
+function resolveNodeBin(): string | null {
+  // 1. Login shell which — most reliable, respects version managers
+  try {
+    const shell = process.env.SHELL || '/bin/bash';
+    const result = execFileSync(shell, ['-lc', 'which node'], {
+      encoding: 'utf-8',
+      timeout: 3000,
+    }).trim();
+    if (result && fs.existsSync(result)) {
+      return result;
+    }
+  } catch {
+    // fall through
+  }
+
+  // 2. Well-known fixed paths
+  const candidates = [
+    '/usr/local/bin/node',
+    '/opt/homebrew/bin/node',
+    '/usr/bin/node',
+    path.join(os.homedir(), '.nvm', 'current', 'bin', 'node'),
+    path.join(os.homedir(), '.volta', 'bin', 'node'),
+  ];
+  for (const p of candidates) {
+    if (fs.existsSync(p)) {
+      return p;
+    }
   }
 
   return null;
@@ -123,9 +167,17 @@ export function activate(context: vscode.ExtensionContext) {
           }
         }
 
-        // Use the absolute Node.js binary path so hooks work in Bob's
-        // non-interactive shell environment where PATH is not inherited.
-        const nodeBin = process.execPath;
+        // Resolve the absolute node binary path so hooks work in Bob's
+        // non-interactive shell (no PATH). process.execPath is NOT used —
+        // in Bob IDE (Electron) it resolves to the Electron helper, not Node.
+        const nodeBin = resolveNodeBin();
+        if (!nodeBin) {
+          vscode.window.showErrorMessage(
+            'Bobtention: Could not locate the Node.js binary. ' +
+            'Ensure Node.js ≥18 is installed and available in your shell PATH, then retry.'
+          );
+          return;
+        }
 
         const sessionStartJs = path.join(hooksDir, 'session-start.js');
         const userPromptSubmitJs = path.join(hooksDir, 'user-prompt-submit.js');
@@ -202,7 +254,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         // 5. Success feedback with quick navigation
         const action = await vscode.window.showInformationMessage(
-          `✓ Bobtention successfully initialized in ${targetFolder.name}!`,
+          `✓ Bobtention initialized in ${targetFolder.name}! (node: ${nodeBin})`,
           'Open .bob/settings.json',
           'Open bobtention.config.json'
         );
