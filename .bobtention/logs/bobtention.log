@@ -1,0 +1,1003 @@
+[2026-09-26T18:29:00.332Z] [INFO] [session-manager] Initialized session: s1
+[2026-09-26T18:29:00.339Z] [INFO] [session-manager] Initialized session: s2
+[2026-09-26T18:29:00.341Z] [INFO] [session-manager] Initialized session: s3
+[2026-09-26T18:29:00.343Z] [INFO] [session-manager] Resumed session: s3
+[2026-09-26T18:29:00.347Z] [INFO] [session-manager] Initialized session: s4
+[2026-09-26T18:29:00.349Z] [INFO] [session-manager] Initialized session: s5
+[2026-09-26T18:29:00.350Z] [INFO] [session-manager] Finalized session: s5
+[2026-09-26T18:29:00.351Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries
+[2026-09-26T18:29:00.354Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:29:00.355Z] [INFO] [session-manager] Initialized session: s6
+[2026-09-26T18:29:00.355Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:29:00.356Z] [WARN] [enforcement] enforcePreAction called from non-blocking hook "post-tool-use" — ignoring BLOCK
+[2026-09-26T18:29:00.356Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-26T18:29:00.357Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-26T18:29:00.360Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:29:00.361Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-26T18:29:00.362Z] [INFO] [enforcement] PostToolUse: concern detected — deferring BLOCK to next PreToolUse
+[2026-09-26T18:29:00.363Z] [INFO] [enforcement] PostToolUse: concern detected — deferring BLOCK to next PreToolUse
+[2026-09-26T18:29:00.363Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:29:00.364Z] [INFO] [session-manager] Initialized session: sf1
+[2026-09-26T18:29:00.364Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Concern detected after file delete
+[2026-09-26T18:29:00.365Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Scope expansion
+[2026-09-26T18:29:00.366Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:29:00.366Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-26T18:29:00.367Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:29:00.367Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-26T18:29:00.368Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:29:00.368Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:29:00.368Z] [INFO] [session-manager] Initialized session: sf2
+[2026-09-26T18:29:00.370Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Scope expansion after action
+[2026-09-26T18:29:00.371Z] [INFO] [enforcement] BLOCK — exit 0: Task drift detected
+[2026-09-26T18:29:00.372Z] [INFO] [enforcement] BLOCK — exit 0: Task drift detected
+[2026-09-26T18:29:00.372Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries
+[2026-09-26T18:29:00.373Z] [INFO] [session-manager] Initialized session: sf3
+[2026-09-26T18:29:00.373Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:29:00.373Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:29:00.374Z] [WARN] [session-manager] Session nonexistent-session-xyz not found — creating empty shell
+[2026-09-26T18:29:00.374Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_callback_test" failed 4× without progress — automatic block
+[2026-09-26T18:29:00.375Z] [INFO] [session-manager] Override written for session nonexistent-session-xyz: "developer_confirmed"
+[2026-09-26T18:29:00.375Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:29:00.376Z] [WARN] [session-manager] Session session-idem not found — creating empty shell
+[2026-09-26T18:29:00.376Z] [INFO] [session-manager] Initialized session: ss1
+[2026-09-26T18:29:00.377Z] [INFO] [session-manager] Override written for session session-idem: "first_reason"
+[2026-09-26T18:29:00.379Z] [INFO] [session-manager] Override written for session session-idem: "second_reason"
+[2026-09-26T18:29:00.379Z] [INFO] [attention-evaluator] Deterministic BLOCK: "build_failure" failed 7× without progress — automatic block
+[2026-09-26T18:29:00.380Z] [INFO] [attention-evaluator] Ambiguous: 1 signal(s) — invoking decision engine
+[2026-09-26T18:29:00.381Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:29:00.382Z] [INFO] [session-manager] Initialized session: ss2
+[2026-09-26T18:29:00.382Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-26T18:29:00.385Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:29:00.386Z] [INFO] [attention-evaluator] Deterministic BLOCK (severity): Signal HIGH_IMPACT_CHANGE severity 0.86 ≥ blockThreshold 0.85 — automatic block
+[2026-09-26T18:29:00.389Z] [INFO] [attention-evaluator] Ambiguous: 2 signal(s) — invoking decision engine
+[2026-09-26T18:29:00.389Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:29:00.389Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.96)
+[2026-09-26T18:29:00.390Z] [INFO] [session-manager] Initialized session: ss3
+[2026-09-26T18:29:00.390Z] [INFO] [attention-evaluator] Deterministic BLOCK (severity): Signal HIGH_IMPACT_CHANGE severity 0.85 ≥ blockThreshold 0.85 — automatic block
+[2026-09-26T18:29:00.391Z] [INFO] [attention-evaluator] Ambiguous: 1 signal(s) — invoking decision engine
+[2026-09-26T18:29:00.391Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:29:00.391Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-26T18:29:00.392Z] [INFO] [attention-evaluator] Ambiguous: 2 signal(s) — invoking decision engine
+[2026-09-26T18:29:00.394Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:29:00.395Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.96)
+[2026-09-26T18:29:00.396Z] [INFO] [attention-evaluator] Ambiguous: 1 signal(s) — invoking decision engine
+[2026-09-26T18:29:00.396Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:9999/dead
+[2026-09-26T18:29:00.397Z] [INFO] [session-manager] Initialized session: si1
+[2026-09-26T18:29:00.398Z] [INFO] [session-manager] Initialized session: act1-normal-1790447340397-1
+[2026-09-26T18:29:00.399Z] [INFO] [session-manager] Initialized session: si2
+[2026-09-26T18:29:00.400Z] [INFO] [session-manager] Intent updated for si2: "refactor auth module"
+[2026-09-26T18:29:00.403Z] [INFO] [session-manager] Initialized session: sa1
+[2026-09-26T18:29:00.406Z] [WARN] [session-manager] Could not load session corrupt from disk: Expected property name or '}' in JSON at position 2 (line 1 column 3)
+[2026-09-26T18:29:00.406Z] [WARN] [session-manager] Could not load session corrupt from disk: Expected property name or '}' in JSON at position 2 (line 1 column 3)
+[2026-09-26T18:29:00.407Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:29:00.407Z] [WARN] [session-manager] Session ghost not found — creating empty shell
+[2026-09-26T18:29:00.409Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:29:00.410Z] [INFO] [session-manager] Initialized session: ssg1
+[2026-09-26T18:29:00.414Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:29:00.415Z] [INFO] [session-manager] Initialized session: ssg2
+[2026-09-26T18:29:00.417Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:29:00.422Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:29:00.425Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:29:00.437Z] [INFO] [session-manager] Initialized session: act2-stuck-1790447340433-2
+[2026-09-26T18:29:00.441Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-26T18:29:00.441Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-26T18:29:00.442Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_callback_should_return_token" failed 4× without progress — automatic block
+[2026-09-26T18:29:00.444Z] [INFO] [enforcement] BLOCK — exit 2: "oauth_callback_should_return_token" failed 4× without progress — automatic block
+[2026-09-26T18:29:00.442Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:29:00.446Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:9999/dead
+[2026-09-26T18:29:00.449Z] [INFO] [session-manager] Initialized session: act3-drift-1790447340448-3
+[2026-09-26T18:29:00.455Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-26T18:29:00.457Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:29:00.458Z] [WARN] [decision-adapter] Primary engine failed: simulated local failure — falling back to local rules
+[2026-09-26T18:29:00.458Z] [INFO] [attention-evaluator] Ambiguous: 2 signal(s) — invoking decision engine
+[2026-09-26T18:29:00.458Z] [WARN] [decision-adapter] Local engine failed — fail-open: ALLOW
+[2026-09-26T18:29:00.459Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:29:00.461Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:29:00.462Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.7)
+[2026-09-26T18:29:00.466Z] [INFO] [session-manager] Initialized session: act4-override-1790447340465-4
+[2026-09-26T18:29:00.471Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_test_fail" failed 4× without progress — automatic block
+[2026-09-26T18:29:00.471Z] [INFO] [enforcement] BLOCK — exit 2: "oauth_test_fail" failed 4× without progress — automatic block
+[2026-09-26T18:29:00.473Z] [INFO] [session-manager] Override written for session act4-override-1790447340465-4: "developer_confirmed_proceed"
+[2026-09-26T18:29:00.473Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed_proceed)
+[2026-09-26T18:29:00.476Z] [INFO] [session-manager] Initialized session: act5-highimpact-1790447340475-5
+[2026-09-26T18:29:00.482Z] [INFO] [attention-evaluator] Ambiguous: 2 signal(s) — invoking decision engine
+[2026-09-26T18:29:00.483Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:29:00.483Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.85)
+[2026-09-26T18:29:00.486Z] [INFO] [session-manager] Initialized session: full-lifecycle-test-1790447340485-6
+[2026-09-26T18:29:00.488Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:29:00.489Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:29:00.492Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:29:00.493Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:29:00.496Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:29:00.497Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:29:00.503Z] [INFO] [session-manager] Initialized session: bounded-history-test-1790447340501-7
+[2026-09-26T18:29:00.512Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:29:00.704Z] [WARN] [event-normalizer] SessionStart: could not parse payload, using fallback
+[2026-09-26T18:29:00.705Z] [WARN] [event-normalizer] SessionStart: could not parse payload, using fallback
+[2026-09-26T18:29:00.707Z] [WARN] [event-normalizer] UserPromptSubmit: could not parse payload
+[2026-09-26T18:29:00.707Z] [WARN] [event-normalizer] UserPromptSubmit: could not parse payload
+[2026-09-26T18:29:00.708Z] [WARN] [event-normalizer] UserPromptSubmit: prompt field missing or empty
+[2026-09-26T18:29:00.709Z] [WARN] [event-normalizer] PreToolUse: could not parse payload
+[2026-09-26T18:29:00.710Z] [WARN] [event-normalizer] PreToolUse: could not parse payload
+[2026-09-26T18:29:00.712Z] [WARN] [event-normalizer] PostToolUse: could not parse payload
+[2026-09-26T18:29:00.724Z] [ERROR] [bobtention] Internal error in test-hook: unexpected internal error
+Error: unexpected internal error
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:29:15
+    at Module.runHook (/Users/macbookpro/ongoing-project/bobtention/src/utils/errors.ts:24:22)
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:28:7
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:135:14
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:60:26
+    at runTest (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:781:17)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runFiles (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:958:5)
+    at startTests (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:967:3)
+[2026-09-26T18:29:00.725Z] [ERROR] [bobtention] Internal error in crashing-hook: boom
+Error: boom
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:38:15
+    at Module.runHook (/Users/macbookpro/ongoing-project/bobtention/src/utils/errors.ts:24:22)
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:37:7
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:135:14
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:60:26
+    at runTest (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:781:17)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runFiles (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:958:5)
+    at startTests (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:967:3)
+[2026-09-26T18:37:43.060Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries
+[2026-09-26T18:37:43.063Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:37:43.064Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:37:43.065Z] [WARN] [enforcement] enforcePreAction called from non-blocking hook "post-tool-use" — ignoring BLOCK
+[2026-09-26T18:37:43.067Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:37:43.068Z] [INFO] [enforcement] PostToolUse: concern detected — deferring BLOCK to next PreToolUse
+[2026-09-26T18:37:43.069Z] [INFO] [enforcement] PostToolUse: concern detected — deferring BLOCK to next PreToolUse
+[2026-09-26T18:37:43.072Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Concern detected after file delete
+[2026-09-26T18:37:43.073Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Scope expansion
+[2026-09-26T18:37:43.076Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-26T18:37:43.077Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-26T18:37:43.078Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries
+[2026-09-26T18:37:43.077Z] [INFO] [session-manager] Initialized session: s1
+[2026-09-26T18:37:43.081Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-26T18:37:43.082Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:37:43.084Z] [INFO] [session-manager] Initialized session: s2
+[2026-09-26T18:37:43.087Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:37:43.089Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-26T18:37:43.090Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:37:43.091Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-26T18:37:43.091Z] [INFO] [session-manager] Initialized session: s3
+[2026-09-26T18:37:43.091Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:37:43.093Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Scope expansion after action
+[2026-09-26T18:37:43.093Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:37:43.095Z] [INFO] [enforcement] BLOCK — exit 0: Task drift detected
+[2026-09-26T18:37:43.096Z] [INFO] [enforcement] BLOCK — exit 0: Task drift detected
+[2026-09-26T18:37:43.098Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:37:43.098Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:37:43.098Z] [INFO] [session-manager] Resumed session: s3
+[2026-09-26T18:37:43.100Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:37:43.101Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_callback_test" failed 4× without progress — automatic block
+[2026-09-26T18:37:43.102Z] [INFO] [session-manager] Override written for session nonexistent-session-xyz: "developer_confirmed"
+[2026-09-26T18:37:43.103Z] [INFO] [attention-evaluator] Deterministic BLOCK: "build_failure" failed 7× without progress — automatic block
+[2026-09-26T18:37:43.104Z] [INFO] [attention-evaluator] Ambiguous: 1 signal(s) — invoking decision engine
+[2026-09-26T18:37:43.105Z] [INFO] [session-manager] Initialized session: s4
+[2026-09-26T18:37:43.106Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:37:43.107Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-26T18:37:43.107Z] [INFO] [session-manager] Override written for session session-idem: "first_reason"
+[2026-09-26T18:37:43.108Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:37:43.110Z] [INFO] [session-manager] Override written for session session-idem: "second_reason"
+[2026-09-26T18:37:43.110Z] [INFO] [session-manager] Initialized session: s5
+[2026-09-26T18:37:43.111Z] [INFO] [attention-evaluator] Deterministic BLOCK (severity): Signal HIGH_IMPACT_CHANGE severity 0.86 ≥ blockThreshold 0.85 — automatic block
+[2026-09-26T18:37:43.112Z] [INFO] [attention-evaluator] Ambiguous: 2 signal(s) — invoking decision engine
+[2026-09-26T18:37:43.112Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:37:43.113Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.96)
+[2026-09-26T18:37:43.114Z] [INFO] [attention-evaluator] Deterministic BLOCK (severity): Signal HIGH_IMPACT_CHANGE severity 0.85 ≥ blockThreshold 0.85 — automatic block
+[2026-09-26T18:37:43.115Z] [INFO] [session-manager] Finalized session: s5
+[2026-09-26T18:37:43.115Z] [INFO] [attention-evaluator] Ambiguous: 1 signal(s) — invoking decision engine
+[2026-09-26T18:37:43.115Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:37:43.116Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-26T18:37:43.117Z] [INFO] [attention-evaluator] Ambiguous: 2 signal(s) — invoking decision engine
+[2026-09-26T18:37:43.117Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:37:43.117Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.96)
+[2026-09-26T18:37:43.118Z] [INFO] [attention-evaluator] Ambiguous: 1 signal(s) — invoking decision engine
+[2026-09-26T18:37:43.119Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:9999/dead
+[2026-09-26T18:37:43.121Z] [INFO] [session-manager] Initialized session: s6
+[2026-09-26T18:37:43.124Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.123Z] [INFO] [session-manager] Initialized session: act1-normal-1790447863120-1
+[2026-09-26T18:37:43.127Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.134Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:37:43.137Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.140Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.141Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:37:43.143Z] [INFO] [session-manager] Initialized session: sf1
+[2026-09-26T18:37:43.144Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.147Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.148Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:37:43.152Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.156Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-26T18:37:43.156Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:37:43.156Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-26T18:37:43.159Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.159Z] [INFO] [session-manager] Initialized session: sf2
+[2026-09-26T18:37:43.161Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.162Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:37:43.166Z] [INFO] [session-manager] Initialized session: sf3
+[2026-09-26T18:37:43.166Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.167Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:37:43.170Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:37:43.172Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:9999/dead
+[2026-09-26T18:37:43.172Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.177Z] [INFO] [session-manager] Initialized session: ss1
+[2026-09-26T18:37:43.181Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-26T18:37:43.182Z] [INFO] [session-manager] Initialized session: act2-stuck-1790447863179-2
+[2026-09-26T18:37:43.184Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:37:43.184Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.184Z] [WARN] [decision-adapter] Primary engine failed: simulated local failure — falling back to local rules
+[2026-09-26T18:37:43.184Z] [WARN] [decision-adapter] Local engine failed — fail-open: ALLOW
+[2026-09-26T18:37:43.185Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:37:43.186Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.192Z] [INFO] [session-manager] Initialized session: ss2
+[2026-09-26T18:37:43.194Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.195Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_callback_should_return_token" failed 4× without progress — automatic block
+[2026-09-26T18:37:43.196Z] [INFO] [enforcement] BLOCK — exit 2: "oauth_callback_should_return_token" failed 4× without progress — automatic block
+[2026-09-26T18:37:43.200Z] [INFO] [session-manager] Initialized session: act3-drift-1790447863198-3
+[2026-09-26T18:37:43.206Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.208Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.210Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.215Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.215Z] [INFO] [session-manager] Initialized session: ss3
+[2026-09-26T18:37:43.219Z] [INFO] [attention-evaluator] Ambiguous: 2 signal(s) — invoking decision engine
+[2026-09-26T18:37:43.220Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:37:43.222Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.7)
+[2026-09-26T18:37:43.226Z] [INFO] [session-manager] Initialized session: act4-override-1790447863224-4
+[2026-09-26T18:37:43.233Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.234Z] [INFO] [session-manager] Initialized session: si1
+[2026-09-26T18:37:43.235Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_test_fail" failed 4× without progress — automatic block
+[2026-09-26T18:37:43.235Z] [INFO] [enforcement] BLOCK — exit 2: "oauth_test_fail" failed 4× without progress — automatic block
+[2026-09-26T18:37:43.239Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.241Z] [INFO] [session-manager] Override written for session act4-override-1790447863224-4: "developer_confirmed_proceed"
+[2026-09-26T18:37:43.241Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed_proceed)
+[2026-09-26T18:37:43.241Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.241Z] [INFO] [session-manager] Initialized session: si2
+[2026-09-26T18:37:43.243Z] [INFO] [session-manager] Intent updated for si2: "refactor auth module"
+[2026-09-26T18:37:43.244Z] [INFO] [session-manager] Initialized session: act5-highimpact-1790447863243-5
+[2026-09-26T18:37:43.248Z] [INFO] [session-manager] Initialized session: sa1
+[2026-09-26T18:37:43.248Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.251Z] [WARN] [session-manager] Could not load session corrupt from disk: Expected property name or '}' in JSON at position 2 (line 1 column 3)
+[2026-09-26T18:37:43.252Z] [WARN] [session-manager] Could not load session corrupt from disk: Expected property name or '}' in JSON at position 2 (line 1 column 3)
+[2026-09-26T18:37:43.254Z] [WARN] [session-manager] Session ghost not found — creating empty shell
+[2026-09-26T18:37:43.256Z] [INFO] [attention-evaluator] Ambiguous: 2 signal(s) — invoking decision engine
+[2026-09-26T18:37:43.256Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.256Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:37:43.257Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.85)
+[2026-09-26T18:37:43.259Z] [INFO] [session-manager] Initialized session: ssg1
+[2026-09-26T18:37:43.259Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.260Z] [INFO] [session-manager] Initialized session: full-lifecycle-test-1790447863258-6
+[2026-09-26T18:37:43.262Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:37:43.263Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.265Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.266Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:37:43.268Z] [INFO] [session-manager] Initialized session: ssg2
+[2026-09-26T18:37:43.268Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.273Z] [WARN] [dashboard] Could not regenerate dashboard: ENOENT: no such file or directory, rename '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html.tmp' -> '/var/folders/n7/b11hxfgj11b1s7jh_7mwq8hw0000gn/T/dashboard.html'
+[2026-09-26T18:37:43.274Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:37:43.277Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:37:43.285Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:37:43.287Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:37:43.296Z] [INFO] [session-manager] Initialized session: bounded-history-test-1790447863294-7
+[2026-09-26T18:37:43.315Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:37:43.454Z] [WARN] [event-normalizer] SessionStart: could not parse payload, using fallback
+[2026-09-26T18:37:43.456Z] [WARN] [event-normalizer] SessionStart: could not parse payload, using fallback
+[2026-09-26T18:37:43.458Z] [WARN] [event-normalizer] UserPromptSubmit: could not parse payload
+[2026-09-26T18:37:43.458Z] [WARN] [event-normalizer] UserPromptSubmit: could not parse payload
+[2026-09-26T18:37:43.458Z] [WARN] [event-normalizer] UserPromptSubmit: prompt field missing or empty
+[2026-09-26T18:37:43.460Z] [WARN] [event-normalizer] PreToolUse: could not parse payload
+[2026-09-26T18:37:43.460Z] [WARN] [event-normalizer] PreToolUse: could not parse payload
+[2026-09-26T18:37:43.462Z] [WARN] [event-normalizer] PostToolUse: could not parse payload
+[2026-09-26T18:37:43.465Z] [ERROR] [bobtention] Internal error in test-hook: unexpected internal error
+Error: unexpected internal error
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:29:15
+    at Module.runHook (/Users/macbookpro/ongoing-project/bobtention/src/utils/errors.ts:24:22)
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:28:7
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:135:14
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:60:26
+    at runTest (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:781:17)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runFiles (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:958:5)
+    at startTests (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:967:3)
+[2026-09-26T18:37:43.467Z] [ERROR] [bobtention] Internal error in crashing-hook: boom
+Error: boom
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:38:15
+    at Module.runHook (/Users/macbookpro/ongoing-project/bobtention/src/utils/errors.ts:24:22)
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:37:7
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:135:14
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:60:26
+    at runTest (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:781:17)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runFiles (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:958:5)
+    at startTests (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:967:3)
+[2026-09-26T18:38:13.038Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries
+[2026-09-26T18:38:13.041Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:38:13.042Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:38:13.042Z] [WARN] [enforcement] enforcePreAction called from non-blocking hook "post-tool-use" — ignoring BLOCK
+[2026-09-26T18:38:13.044Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:38:13.045Z] [INFO] [enforcement] PostToolUse: concern detected — deferring BLOCK to next PreToolUse
+[2026-09-26T18:38:13.046Z] [INFO] [enforcement] PostToolUse: concern detected — deferring BLOCK to next PreToolUse
+[2026-09-26T18:38:13.048Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Concern detected after file delete
+[2026-09-26T18:38:13.049Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Scope expansion
+[2026-09-26T18:38:13.054Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries
+[2026-09-26T18:38:13.057Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-26T18:38:13.058Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-26T18:38:13.058Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:38:13.059Z] [INFO] [session-manager] Initialized session: s1
+[2026-09-26T18:38:13.061Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-26T18:38:13.066Z] [INFO] [session-manager] Initialized session: s2
+[2026-09-26T18:38:13.067Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:38:13.068Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-26T18:38:13.069Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:38:13.070Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-26T18:38:13.072Z] [INFO] [session-manager] Initialized session: s3
+[2026-09-26T18:38:13.072Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:38:13.073Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Scope expansion after action
+[2026-09-26T18:38:13.074Z] [INFO] [session-manager] Resumed session: s3
+[2026-09-26T18:38:13.074Z] [INFO] [enforcement] BLOCK — exit 0: Task drift detected
+[2026-09-26T18:38:13.074Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:38:13.076Z] [INFO] [enforcement] BLOCK — exit 0: Task drift detected
+[2026-09-26T18:38:13.077Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:38:13.077Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-26T18:38:13.079Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:38:13.080Z] [INFO] [session-manager] Initialized session: s4
+[2026-09-26T18:38:13.081Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_callback_test" failed 4× without progress — automatic block
+[2026-09-26T18:38:13.082Z] [INFO] [session-manager] Override written for session nonexistent-session-xyz: "developer_confirmed"
+[2026-09-26T18:38:13.083Z] [INFO] [session-manager] Initialized session: s5
+[2026-09-26T18:38:13.083Z] [INFO] [attention-evaluator] Deterministic BLOCK: "build_failure" failed 7× without progress — automatic block
+[2026-09-26T18:38:13.084Z] [INFO] [attention-evaluator] Ambiguous: 1 signal(s) — invoking decision engine
+[2026-09-26T18:38:13.084Z] [INFO] [session-manager] Override written for session session-idem: "first_reason"
+[2026-09-26T18:38:13.084Z] [INFO] [session-manager] Finalized session: s5
+[2026-09-26T18:38:13.084Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:38:13.085Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-26T18:38:13.085Z] [INFO] [session-manager] Override written for session session-idem: "second_reason"
+[2026-09-26T18:38:13.087Z] [INFO] [session-manager] Initialized session: s6
+[2026-09-26T18:38:13.087Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:38:13.090Z] [INFO] [attention-evaluator] Deterministic BLOCK (severity): Signal HIGH_IMPACT_CHANGE severity 0.86 ≥ blockThreshold 0.85 — automatic block
+[2026-09-26T18:38:13.091Z] [INFO] [attention-evaluator] Ambiguous: 2 signal(s) — invoking decision engine
+[2026-09-26T18:38:13.091Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:38:13.092Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.96)
+[2026-09-26T18:38:13.093Z] [INFO] [attention-evaluator] Deterministic BLOCK (severity): Signal HIGH_IMPACT_CHANGE severity 0.85 ≥ blockThreshold 0.85 — automatic block
+[2026-09-26T18:38:13.094Z] [INFO] [attention-evaluator] Ambiguous: 1 signal(s) — invoking decision engine
+[2026-09-26T18:38:13.094Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:38:13.094Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-26T18:38:13.095Z] [INFO] [attention-evaluator] Ambiguous: 2 signal(s) — invoking decision engine
+[2026-09-26T18:38:13.096Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:38:13.096Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.96)
+[2026-09-26T18:38:13.097Z] [INFO] [attention-evaluator] Ambiguous: 1 signal(s) — invoking decision engine
+[2026-09-26T18:38:13.098Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:9999/dead
+[2026-09-26T18:38:13.098Z] [INFO] [session-manager] Initialized session: act1-normal-1790447893095-1
+[2026-09-26T18:38:13.102Z] [INFO] [session-manager] Initialized session: sf1
+[2026-09-26T18:38:13.108Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:38:13.113Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:38:13.112Z] [INFO] [session-manager] Initialized session: sf2
+[2026-09-26T18:38:13.117Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:38:13.119Z] [INFO] [session-manager] Initialized session: sf3
+[2026-09-26T18:38:13.119Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:38:13.122Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:9999/dead
+[2026-09-26T18:38:13.123Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:38:13.127Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-26T18:38:13.127Z] [INFO] [session-manager] Initialized session: ss1
+[2026-09-26T18:38:13.127Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:38:13.130Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:38:13.131Z] [WARN] [decision-adapter] Primary engine failed: simulated local failure — falling back to local rules
+[2026-09-26T18:38:13.131Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:38:13.131Z] [WARN] [decision-adapter] Local engine failed — fail-open: ALLOW
+[2026-09-26T18:38:13.133Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:38:13.139Z] [INFO] [session-manager] Initialized session: ss2
+[2026-09-26T18:38:13.142Z] [INFO] [session-manager] Initialized session: act2-stuck-1790447893140-2
+[2026-09-26T18:38:13.142Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-26T18:38:13.142Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-26T18:38:13.149Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_callback_should_return_token" failed 4× without progress — automatic block
+[2026-09-26T18:38:13.150Z] [INFO] [enforcement] BLOCK — exit 2: "oauth_callback_should_return_token" failed 4× without progress — automatic block
+[2026-09-26T18:38:13.154Z] [INFO] [session-manager] Initialized session: act3-drift-1790447893152-3
+[2026-09-26T18:38:13.154Z] [INFO] [session-manager] Initialized session: ss3
+[2026-09-26T18:38:13.165Z] [INFO] [attention-evaluator] Ambiguous: 2 signal(s) — invoking decision engine
+[2026-09-26T18:38:13.166Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:38:13.166Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.7)
+[2026-09-26T18:38:13.167Z] [INFO] [session-manager] Initialized session: si1
+[2026-09-26T18:38:13.170Z] [INFO] [session-manager] Initialized session: act4-override-1790447893168-4
+[2026-09-26T18:38:13.173Z] [INFO] [session-manager] Initialized session: si2
+[2026-09-26T18:38:13.174Z] [INFO] [session-manager] Intent updated for si2: "refactor auth module"
+[2026-09-26T18:38:13.176Z] [INFO] [session-manager] Initialized session: sa1
+[2026-09-26T18:38:13.178Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_test_fail" failed 4× without progress — automatic block
+[2026-09-26T18:38:13.178Z] [INFO] [enforcement] BLOCK — exit 2: "oauth_test_fail" failed 4× without progress — automatic block
+[2026-09-26T18:38:13.179Z] [WARN] [session-manager] Could not load session corrupt from disk: Expected property name or '}' in JSON at position 2 (line 1 column 3)
+[2026-09-26T18:38:13.179Z] [WARN] [session-manager] Could not load session corrupt from disk: Expected property name or '}' in JSON at position 2 (line 1 column 3)
+[2026-09-26T18:38:13.181Z] [WARN] [session-manager] Session ghost not found — creating empty shell
+[2026-09-26T18:38:13.181Z] [INFO] [session-manager] Override written for session act4-override-1790447893168-4: "developer_confirmed_proceed"
+[2026-09-26T18:38:13.182Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed_proceed)
+[2026-09-26T18:38:13.184Z] [INFO] [session-manager] Initialized session: ssg1
+[2026-09-26T18:38:13.185Z] [INFO] [session-manager] Initialized session: act5-highimpact-1790447893184-5
+[2026-09-26T18:38:13.191Z] [INFO] [session-manager] Initialized session: ssg2
+[2026-09-26T18:38:13.191Z] [INFO] [attention-evaluator] Ambiguous: 2 signal(s) — invoking decision engine
+[2026-09-26T18:38:13.191Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-26T18:38:13.192Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.85)
+[2026-09-26T18:38:13.195Z] [INFO] [session-manager] Initialized session: full-lifecycle-test-1790447893193-6
+[2026-09-26T18:38:13.198Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:38:13.200Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:38:13.203Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:38:13.207Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:38:13.210Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:38:13.212Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:38:13.220Z] [INFO] [session-manager] Initialized session: bounded-history-test-1790447893217-7
+[2026-09-26T18:38:13.233Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-26T18:38:13.433Z] [WARN] [event-normalizer] SessionStart: could not parse payload, using fallback
+[2026-09-26T18:38:13.435Z] [WARN] [event-normalizer] SessionStart: could not parse payload, using fallback
+[2026-09-26T18:38:13.437Z] [WARN] [event-normalizer] UserPromptSubmit: could not parse payload
+[2026-09-26T18:38:13.437Z] [WARN] [event-normalizer] UserPromptSubmit: could not parse payload
+[2026-09-26T18:38:13.438Z] [WARN] [event-normalizer] UserPromptSubmit: prompt field missing or empty
+[2026-09-26T18:38:13.441Z] [WARN] [event-normalizer] PreToolUse: could not parse payload
+[2026-09-26T18:38:13.441Z] [WARN] [event-normalizer] PreToolUse: could not parse payload
+[2026-09-26T18:38:13.443Z] [WARN] [event-normalizer] PostToolUse: could not parse payload
+[2026-09-26T18:38:13.449Z] [ERROR] [bobtention] Internal error in test-hook: unexpected internal error
+Error: unexpected internal error
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:29:15
+    at Module.runHook (/Users/macbookpro/ongoing-project/bobtention/src/utils/errors.ts:24:22)
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:28:7
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:135:14
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:60:26
+    at runTest (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:781:17)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runFiles (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:958:5)
+    at startTests (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:967:3)
+[2026-09-26T18:38:13.451Z] [ERROR] [bobtention] Internal error in crashing-hook: boom
+Error: boom
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:38:15
+    at Module.runHook (/Users/macbookpro/ongoing-project/bobtention/src/utils/errors.ts:24:22)
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:37:7
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:135:14
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:60:26
+    at runTest (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:781:17)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runFiles (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:958:5)
+    at startTests (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:967:3)
+[2026-09-27T01:23:02.451Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries
+[2026-09-27T01:23:02.453Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T01:23:02.454Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T01:23:02.455Z] [WARN] [enforcement] enforcePreAction called from non-blocking hook "post-tool-use" — ignoring BLOCK
+[2026-09-27T01:23:02.456Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T01:23:02.458Z] [INFO] [enforcement] PostToolUse: concern detected — deferring BLOCK to next PreToolUse
+[2026-09-27T01:23:02.458Z] [INFO] [enforcement] PostToolUse: concern detected — deferring BLOCK to next PreToolUse
+[2026-09-27T01:23:02.460Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Concern detected after file delete
+[2026-09-27T01:23:02.461Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Scope expansion
+[2026-09-27T01:23:02.466Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries
+[2026-09-27T01:23:02.469Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T01:23:02.473Z] [INFO] [session-manager] Initialized session: s1
+[2026-09-27T01:23:02.477Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-27T01:23:02.478Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-27T01:23:02.481Z] [INFO] [session-manager] Initialized session: s2
+[2026-09-27T01:23:02.482Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-27T01:23:02.487Z] [INFO] [session-manager] Initialized session: s3
+[2026-09-27T01:23:02.487Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T01:23:02.488Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-27T01:23:02.489Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T01:23:02.489Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-27T01:23:02.497Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T01:23:02.497Z] [INFO] [session-manager] Resumed session: s3
+[2026-09-27T01:23:02.501Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Scope expansion after action
+[2026-09-27T01:23:02.502Z] [INFO] [enforcement] BLOCK — exit 0: Task drift detected
+[2026-09-27T01:23:02.503Z] [INFO] [enforcement] BLOCK — exit 0: Task drift detected
+[2026-09-27T01:23:02.505Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T01:23:02.505Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T01:23:02.507Z] [INFO] [session-manager] Initialized session: s4
+[2026-09-27T01:23:02.511Z] [INFO] [session-manager] Initialized session: s5
+[2026-09-27T01:23:02.518Z] [INFO] [session-manager] Override written for session nonexistent-session-xyz: "developer_confirmed"
+[2026-09-27T01:23:02.522Z] [INFO] [session-manager] Override written for session session-idem: "first_reason"
+[2026-09-27T01:23:02.523Z] [INFO] [session-manager] Finalized session: s5
+[2026-09-27T01:23:02.524Z] [INFO] [session-manager] Override written for session session-idem: "second_reason"
+[2026-09-27T01:23:02.526Z] [INFO] [session-manager] Initialized session: s6
+[2026-09-27T01:23:02.539Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-27T01:23:02.545Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-27T01:23:02.549Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T01:23:02.550Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:9999/dead
+[2026-09-27T01:23:02.553Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_callback_test" failed 4× without progress — automatic block
+[2026-09-27T01:23:02.554Z] [WARN] [decision-adapter] Laya engine failed: fetch failed — falling back to local rules
+[2026-09-27T01:23:02.562Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T01:23:02.562Z] [ERROR] [decision-adapter] Local engine failed: simulated local failure — fail-open: ALLOW
+[2026-09-27T01:23:02.563Z] [INFO] [attention-evaluator] Deterministic BLOCK: "build_failure" failed 7× without progress — automatic block
+[2026-09-27T01:23:02.563Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T01:23:02.564Z] [INFO] [attention-evaluator] Ambiguous: 1 signal(s) — invoking decision engine
+[2026-09-27T01:23:02.565Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T01:23:02.566Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-27T01:23:02.568Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-27T01:23:02.572Z] [INFO] [attention-evaluator] Deterministic BLOCK (severity): Signal HIGH_IMPACT_CHANGE severity 0.86 ≥ blockThreshold 0.85 — automatic block
+[2026-09-27T01:23:02.573Z] [INFO] [attention-evaluator] Ambiguous: 2 signal(s) — invoking decision engine
+[2026-09-27T01:23:02.574Z] [INFO] [session-manager] Initialized session: act1-normal-1790472182571-1
+[2026-09-27T01:23:02.575Z] [INFO] [session-manager] Initialized session: sf1
+[2026-09-27T01:23:02.574Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T01:23:02.575Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.96)
+[2026-09-27T01:23:02.577Z] [INFO] [attention-evaluator] Deterministic BLOCK (severity): Signal HIGH_IMPACT_CHANGE severity 0.85 ≥ blockThreshold 0.85 — automatic block
+[2026-09-27T01:23:02.578Z] [INFO] [attention-evaluator] Ambiguous: 1 signal(s) — invoking decision engine
+[2026-09-27T01:23:02.585Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T01:23:02.585Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-27T01:23:02.586Z] [INFO] [attention-evaluator] Ambiguous: 2 signal(s) — invoking decision engine
+[2026-09-27T01:23:02.587Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T01:23:02.587Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.96)
+[2026-09-27T01:23:02.591Z] [INFO] [attention-evaluator] Ambiguous: 1 signal(s) — invoking decision engine
+[2026-09-27T01:23:02.591Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:9999/dead
+[2026-09-27T01:23:02.594Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-27T01:23:02.601Z] [INFO] [session-manager] Initialized session: sf2
+[2026-09-27T01:23:02.603Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-27T01:23:02.615Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-27T01:23:02.620Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-27T01:23:02.624Z] [INFO] [session-manager] Initialized session: sf3
+[2026-09-27T01:23:02.625Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-27T01:23:02.630Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-27T01:23:02.631Z] [INFO] [session-manager] Initialized session: ss1
+[2026-09-27T01:23:02.638Z] [INFO] [session-manager] Initialized session: act2-stuck-1790472182637-2
+[2026-09-27T01:23:02.640Z] [INFO] [session-manager] Initialized session: ss2
+[2026-09-27T01:23:02.647Z] [WARN] [decision-adapter] Laya engine failed: fetch failed — falling back to local rules
+[2026-09-27T01:23:02.648Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-27T01:23:02.655Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_callback_should_return_token" failed 4× without progress — automatic block
+[2026-09-27T01:23:02.656Z] [INFO] [enforcement] BLOCK — exit 2: "oauth_callback_should_return_token" failed 4× without progress — automatic block
+[2026-09-27T01:23:02.660Z] [INFO] [session-manager] Initialized session: act3-drift-1790472182658-3
+[2026-09-27T01:23:02.664Z] [INFO] [session-manager] Initialized session: ss3
+[2026-09-27T01:23:02.681Z] [INFO] [attention-evaluator] Ambiguous: 2 signal(s) — invoking decision engine
+[2026-09-27T01:23:02.682Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T01:23:02.687Z] [INFO] [session-manager] Initialized session: si1
+[2026-09-27T01:23:02.694Z] [INFO] [session-manager] Initialized session: si2
+[2026-09-27T01:23:02.696Z] [INFO] [session-manager] Intent updated for si2: "refactor auth module"
+[2026-09-27T01:23:02.699Z] [INFO] [session-manager] Initialized session: sa1
+[2026-09-27T01:23:02.712Z] [WARN] [session-manager] Could not load session corrupt from disk: Expected property name or '}' in JSON at position 2 (line 1 column 3)
+[2026-09-27T01:23:02.712Z] [WARN] [session-manager] Could not load session corrupt from disk: Expected property name or '}' in JSON at position 2 (line 1 column 3)
+[2026-09-27T01:23:02.713Z] [WARN] [session-manager] Session ghost not found — creating empty shell
+[2026-09-27T01:23:02.716Z] [INFO] [session-manager] Initialized session: ssg1
+[2026-09-27T01:23:02.722Z] [INFO] [session-manager] Initialized session: ssg2
+[2026-09-27T01:23:02.735Z] [WARN] [decision-adapter] Laya engine failed: fetch failed — falling back to local rules
+[2026-09-27T01:23:02.736Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.7)
+[2026-09-27T01:23:02.748Z] [INFO] [session-manager] Initialized session: act4-override-1790472182738-4
+[2026-09-27T01:23:02.761Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_test_fail" failed 4× without progress — automatic block
+[2026-09-27T01:23:02.761Z] [INFO] [enforcement] BLOCK — exit 2: "oauth_test_fail" failed 4× without progress — automatic block
+[2026-09-27T01:23:02.765Z] [INFO] [session-manager] Override written for session act4-override-1790472182738-4: "developer_confirmed_proceed"
+[2026-09-27T01:23:02.765Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed_proceed)
+[2026-09-27T01:23:02.780Z] [INFO] [session-manager] Initialized session: act5-highimpact-1790472182779-5
+[2026-09-27T01:23:02.787Z] [INFO] [attention-evaluator] Ambiguous: 2 signal(s) — invoking decision engine
+[2026-09-27T01:23:02.787Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T01:23:02.795Z] [WARN] [decision-adapter] Laya engine failed: fetch failed — falling back to local rules
+[2026-09-27T01:23:02.796Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.85)
+[2026-09-27T01:23:02.799Z] [INFO] [session-manager] Initialized session: full-lifecycle-test-1790472182797-6
+[2026-09-27T01:23:02.800Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-27T01:23:02.802Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-27T01:23:02.811Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-27T01:23:02.813Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-27T01:23:02.817Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-27T01:23:02.819Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-27T01:23:02.832Z] [INFO] [session-manager] Initialized session: bounded-history-test-1790472182825-7
+[2026-09-27T01:23:02.855Z] [INFO] [attention-evaluator] Fast ALLOW: no signals
+[2026-09-27T01:23:02.963Z] [WARN] [event-normalizer] SessionStart: could not parse payload, using fallback
+[2026-09-27T01:23:02.964Z] [WARN] [event-normalizer] SessionStart: could not parse payload, using fallback
+[2026-09-27T01:23:02.973Z] [WARN] [event-normalizer] UserPromptSubmit: could not parse payload
+[2026-09-27T01:23:02.974Z] [WARN] [event-normalizer] UserPromptSubmit: could not parse payload
+[2026-09-27T01:23:02.974Z] [ERROR] [bobtention] Internal error in test-hook: unexpected internal error
+Error: unexpected internal error
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:29:15
+    at Module.runHook (/Users/macbookpro/ongoing-project/bobtention/src/utils/errors.ts:24:22)
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:28:7
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:135:14
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:60:26
+    at runTest (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:781:17)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runFiles (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:958:5)
+    at startTests (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:967:3)
+[2026-09-27T01:23:02.975Z] [WARN] [event-normalizer] UserPromptSubmit: prompt field missing or empty
+[2026-09-27T01:23:02.976Z] [ERROR] [bobtention] Internal error in crashing-hook: boom
+Error: boom
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:38:15
+    at Module.runHook (/Users/macbookpro/ongoing-project/bobtention/src/utils/errors.ts:24:22)
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:37:7
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:135:14
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:60:26
+    at runTest (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:781:17)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runFiles (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:958:5)
+    at startTests (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:967:3)
+[2026-09-27T01:23:02.978Z] [WARN] [event-normalizer] PreToolUse: could not parse payload
+[2026-09-27T01:23:02.979Z] [WARN] [event-normalizer] PreToolUse: could not parse payload
+[2026-09-27T01:23:02.982Z] [WARN] [event-normalizer] PostToolUse: could not parse payload
+[2026-09-27T05:03:24.188Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries
+[2026-09-27T05:03:24.190Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:24.191Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:24.192Z] [WARN] [enforcement] enforcePreAction called from non-blocking hook "post-tool-use" — ignoring BLOCK
+[2026-09-27T05:03:24.194Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:24.195Z] [INFO] [enforcement] PostToolUse: concern detected — deferring BLOCK to next PreToolUse
+[2026-09-27T05:03:24.195Z] [INFO] [enforcement] PostToolUse: concern detected — deferring BLOCK to next PreToolUse
+[2026-09-27T05:03:24.197Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Concern detected after file delete
+[2026-09-27T05:03:24.198Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Scope expansion
+[2026-09-27T05:03:24.203Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries
+[2026-09-27T05:03:24.204Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-27T05:03:24.205Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-27T05:03:24.205Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:24.206Z] [INFO] [session-manager] Initialized session: s1
+[2026-09-27T05:03:24.209Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-27T05:03:24.214Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:24.214Z] [INFO] [session-manager] Initialized session: s2
+[2026-09-27T05:03:24.214Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-27T05:03:24.215Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:24.215Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-27T05:03:24.217Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:24.217Z] [INFO] [session-manager] Initialized session: s3
+[2026-09-27T05:03:24.219Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Scope expansion after action
+[2026-09-27T05:03:24.219Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:24.220Z] [INFO] [session-manager] Resumed session: s3
+[2026-09-27T05:03:24.220Z] [INFO] [enforcement] BLOCK — exit 0: Task drift detected
+[2026-09-27T05:03:24.220Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.221Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:24.221Z] [INFO] [enforcement] BLOCK — exit 0: Task drift detected
+[2026-09-27T05:03:24.222Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:24.223Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:24.226Z] [INFO] [session-manager] Initialized session: s4
+[2026-09-27T05:03:24.230Z] [INFO] [session-manager] Override written for session nonexistent-session-xyz: "developer_confirmed"
+[2026-09-27T05:03:24.230Z] [INFO] [session-manager] Initialized session: s5
+[2026-09-27T05:03:24.232Z] [INFO] [session-manager] Finalized session: s5
+[2026-09-27T05:03:24.234Z] [INFO] [session-manager] Override written for session session-idem: "first_reason"
+[2026-09-27T05:03:24.236Z] [INFO] [session-manager] Override written for session session-idem: "second_reason"
+[2026-09-27T05:03:24.237Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:24.237Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.238Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:24.239Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_callback_test" failed 4× without progress — automatic block
+[2026-09-27T05:03:24.242Z] [INFO] [attention-evaluator] Deterministic BLOCK: "build_failure" failed 7× without progress — automatic block
+[2026-09-27T05:03:24.242Z] [INFO] [session-manager] Initialized session: s6
+[2026-09-27T05:03:24.242Z] [INFO] [session-manager] Initialized session: act1-normal-1790485404239-1
+[2026-09-27T05:03:24.244Z] [INFO] [attention-evaluator] Invoking decision engine (1 local signal(s))
+[2026-09-27T05:03:24.244Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.244Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-27T05:03:24.245Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:24.245Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.245Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:24.247Z] [INFO] [attention-evaluator] Deterministic BLOCK (severity): Signal HIGH_IMPACT_CHANGE severity 0.86 ≥ blockThreshold 0.85 — automatic block
+[2026-09-27T05:03:24.248Z] [INFO] [attention-evaluator] Invoking decision engine (2 local signal(s))
+[2026-09-27T05:03:24.248Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.248Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.96)
+[2026-09-27T05:03:24.250Z] [INFO] [attention-evaluator] Deterministic BLOCK (severity): Signal HIGH_IMPACT_CHANGE severity 0.85 ≥ blockThreshold 0.85 — automatic block
+[2026-09-27T05:03:24.251Z] [INFO] [attention-evaluator] Invoking decision engine (1 local signal(s))
+[2026-09-27T05:03:24.251Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.251Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:24.252Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-27T05:03:24.252Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.253Z] [INFO] [attention-evaluator] Invoking decision engine (2 local signal(s))
+[2026-09-27T05:03:24.253Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.253Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:24.253Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.96)
+[2026-09-27T05:03:24.254Z] [INFO] [attention-evaluator] Invoking decision engine (1 local signal(s))
+[2026-09-27T05:03:24.254Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:9999/dead
+[2026-09-27T05:03:24.256Z] [INFO] [session-manager] Initialized session: sf1
+[2026-09-27T05:03:24.257Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:24.258Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.259Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:24.262Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:24.263Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.263Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:24.265Z] [INFO] [session-manager] Initialized session: sf2
+[2026-09-27T05:03:24.267Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:24.267Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.267Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:24.271Z] [INFO] [session-manager] Initialized session: sf3
+[2026-09-27T05:03:24.271Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:24.271Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.271Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:24.276Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:24.276Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.277Z] [INFO] [session-manager] Initialized session: ss1
+[2026-09-27T05:03:24.278Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:24.281Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.282Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:9999/dead
+[2026-09-27T05:03:24.286Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T05:03:24.286Z] [INFO] [session-manager] Initialized session: act2-stuck-1790485404285-2
+[2026-09-27T05:03:24.288Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.288Z] [WARN] [decision-adapter] Primary engine failed: simulated local failure — falling back to local rules
+[2026-09-27T05:03:24.289Z] [WARN] [decision-adapter] Local engine failed — fail-open: ALLOW
+[2026-09-27T05:03:24.290Z] [INFO] [session-manager] Initialized session: ss2
+[2026-09-27T05:03:24.290Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.295Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_callback_should_return_token" failed 4× without progress — automatic block
+[2026-09-27T05:03:24.296Z] [INFO] [enforcement] BLOCK — exit 2: "oauth_callback_should_return_token" failed 4× without progress — automatic block
+[2026-09-27T05:03:24.298Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T05:03:24.300Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-27T05:03:24.300Z] [INFO] [session-manager] Initialized session: act3-drift-1790485404298-3
+[2026-09-27T05:03:24.308Z] [INFO] [session-manager] Initialized session: ss3
+[2026-09-27T05:03:24.312Z] [INFO] [attention-evaluator] Invoking decision engine (2 local signal(s))
+[2026-09-27T05:03:24.312Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.313Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.7)
+[2026-09-27T05:03:24.317Z] [INFO] [session-manager] Initialized session: act4-override-1790485404315-4
+[2026-09-27T05:03:24.323Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_test_fail" failed 4× without progress — automatic block
+[2026-09-27T05:03:24.323Z] [INFO] [session-manager] Initialized session: si1
+[2026-09-27T05:03:24.323Z] [INFO] [enforcement] BLOCK — exit 2: "oauth_test_fail" failed 4× without progress — automatic block
+[2026-09-27T05:03:24.327Z] [INFO] [session-manager] Override written for session act4-override-1790485404315-4: "developer_confirmed_proceed"
+[2026-09-27T05:03:24.328Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed_proceed)
+[2026-09-27T05:03:24.331Z] [INFO] [session-manager] Initialized session: act5-highimpact-1790485404330-5
+[2026-09-27T05:03:24.331Z] [INFO] [session-manager] Initialized session: si2
+[2026-09-27T05:03:24.334Z] [INFO] [session-manager] Intent updated for si2: "refactor auth module"
+[2026-09-27T05:03:24.336Z] [INFO] [session-manager] Initialized session: sa1
+[2026-09-27T05:03:24.338Z] [INFO] [attention-evaluator] Invoking decision engine (2 local signal(s))
+[2026-09-27T05:03:24.339Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.339Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.85)
+[2026-09-27T05:03:24.340Z] [WARN] [session-manager] Could not load session corrupt from disk: Expected property name or '}' in JSON at position 2 (line 1 column 3)
+[2026-09-27T05:03:24.340Z] [WARN] [session-manager] Could not load session corrupt from disk: Expected property name or '}' in JSON at position 2 (line 1 column 3)
+[2026-09-27T05:03:24.343Z] [WARN] [session-manager] Session ghost not found — creating empty shell
+[2026-09-27T05:03:24.344Z] [INFO] [session-manager] Initialized session: full-lifecycle-test-1790485404343-6
+[2026-09-27T05:03:24.345Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:24.346Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.346Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:24.348Z] [INFO] [session-manager] Initialized session: ssg1
+[2026-09-27T05:03:24.349Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:24.350Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.350Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:24.353Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:24.353Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.353Z] [INFO] [session-manager] Initialized session: ssg2
+[2026-09-27T05:03:24.354Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:24.356Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:24.356Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.356Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:24.362Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:24.362Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.363Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:24.367Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:24.368Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.368Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:24.378Z] [INFO] [session-manager] Initialized session: bounded-history-test-1790485404376-7
+[2026-09-27T05:03:24.394Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:24.394Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:24.394Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:24.562Z] [WARN] [event-normalizer] SessionStart: could not parse payload, using fallback
+[2026-09-27T05:03:24.563Z] [WARN] [event-normalizer] SessionStart: could not parse payload, using fallback
+[2026-09-27T05:03:24.564Z] [WARN] [event-normalizer] UserPromptSubmit: could not parse payload
+[2026-09-27T05:03:24.565Z] [WARN] [event-normalizer] UserPromptSubmit: could not parse payload
+[2026-09-27T05:03:24.565Z] [WARN] [event-normalizer] UserPromptSubmit: prompt field missing or empty
+[2026-09-27T05:03:24.568Z] [WARN] [event-normalizer] PreToolUse: could not parse payload
+[2026-09-27T05:03:24.568Z] [WARN] [event-normalizer] PreToolUse: could not parse payload
+[2026-09-27T05:03:24.568Z] [ERROR] [bobtention] Internal error in test-hook: unexpected internal error
+Error: unexpected internal error
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:29:15
+    at Module.runHook (/Users/macbookpro/ongoing-project/bobtention/src/utils/errors.ts:24:22)
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:28:7
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:135:14
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:60:26
+    at runTest (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:781:17)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runFiles (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:958:5)
+    at startTests (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:967:3)
+[2026-09-27T05:03:24.569Z] [ERROR] [bobtention] Internal error in crashing-hook: boom
+Error: boom
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:38:15
+    at Module.runHook (/Users/macbookpro/ongoing-project/bobtention/src/utils/errors.ts:24:22)
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:37:7
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:135:14
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:60:26
+    at runTest (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:781:17)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runFiles (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:958:5)
+    at startTests (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:967:3)
+[2026-09-27T05:03:24.569Z] [WARN] [event-normalizer] PostToolUse: could not parse payload
+[2026-09-27T05:03:54.275Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries
+[2026-09-27T05:03:54.278Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:54.279Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:54.279Z] [WARN] [enforcement] enforcePreAction called from non-blocking hook "post-tool-use" — ignoring BLOCK
+[2026-09-27T05:03:54.282Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:54.284Z] [INFO] [enforcement] PostToolUse: concern detected — deferring BLOCK to next PreToolUse
+[2026-09-27T05:03:54.285Z] [INFO] [enforcement] PostToolUse: concern detected — deferring BLOCK to next PreToolUse
+[2026-09-27T05:03:54.287Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Concern detected after file delete
+[2026-09-27T05:03:54.287Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Scope expansion
+[2026-09-27T05:03:54.291Z] [INFO] [session-manager] Initialized session: s1
+[2026-09-27T05:03:54.292Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-27T05:03:54.293Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries
+[2026-09-27T05:03:54.293Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-27T05:03:54.296Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-27T05:03:54.296Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:54.297Z] [INFO] [session-manager] Initialized session: s2
+[2026-09-27T05:03:54.302Z] [INFO] [session-manager] Initialized session: s3
+[2026-09-27T05:03:54.302Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:54.303Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-27T05:03:54.303Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:54.303Z] [INFO] [session-manager] Resumed session: s3
+[2026-09-27T05:03:54.304Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed)
+[2026-09-27T05:03:54.304Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:54.309Z] [INFO] [enforcement] Consuming deferred BLOCK from PostToolUse: Scope expansion after action
+[2026-09-27T05:03:54.310Z] [INFO] [enforcement] BLOCK — exit 0: Task drift detected
+[2026-09-27T05:03:54.310Z] [INFO] [enforcement] BLOCK — exit 0: Task drift detected
+[2026-09-27T05:03:54.310Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:54.311Z] [INFO] [session-manager] Initialized session: s4
+[2026-09-27T05:03:54.311Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:54.312Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.312Z] [INFO] [enforcement] BLOCK — exit 2: Task drift detected
+[2026-09-27T05:03:54.312Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:54.315Z] [INFO] [session-manager] Initialized session: s5
+[2026-09-27T05:03:54.317Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:54.316Z] [INFO] [session-manager] Override written for session nonexistent-session-xyz: "developer_confirmed"
+[2026-09-27T05:03:54.317Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.317Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:54.318Z] [INFO] [session-manager] Finalized session: s5
+[2026-09-27T05:03:54.319Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_callback_test" failed 4× without progress — automatic block
+[2026-09-27T05:03:54.319Z] [INFO] [session-manager] Override written for session session-idem: "first_reason"
+[2026-09-27T05:03:54.320Z] [INFO] [session-manager] Initialized session: s6
+[2026-09-27T05:03:54.321Z] [INFO] [attention-evaluator] Deterministic BLOCK: "build_failure" failed 7× without progress — automatic block
+[2026-09-27T05:03:54.321Z] [INFO] [session-manager] Override written for session session-idem: "second_reason"
+[2026-09-27T05:03:54.322Z] [INFO] [attention-evaluator] Invoking decision engine (1 local signal(s))
+[2026-09-27T05:03:54.322Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.322Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-27T05:03:54.325Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:54.326Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.326Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:54.327Z] [INFO] [attention-evaluator] Deterministic BLOCK (severity): Signal HIGH_IMPACT_CHANGE severity 0.86 ≥ blockThreshold 0.85 — automatic block
+[2026-09-27T05:03:54.328Z] [INFO] [attention-evaluator] Invoking decision engine (2 local signal(s))
+[2026-09-27T05:03:54.328Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.328Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.96)
+[2026-09-27T05:03:54.329Z] [INFO] [attention-evaluator] Deterministic BLOCK (severity): Signal HIGH_IMPACT_CHANGE severity 0.85 ≥ blockThreshold 0.85 — automatic block
+[2026-09-27T05:03:54.330Z] [INFO] [attention-evaluator] Invoking decision engine (1 local signal(s))
+[2026-09-27T05:03:54.331Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.331Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-27T05:03:54.332Z] [INFO] [attention-evaluator] Invoking decision engine (2 local signal(s))
+[2026-09-27T05:03:54.332Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.333Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.96)
+[2026-09-27T05:03:54.334Z] [INFO] [attention-evaluator] Invoking decision engine (1 local signal(s))
+[2026-09-27T05:03:54.334Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:9999/dead
+[2026-09-27T05:03:54.336Z] [INFO] [session-manager] Initialized session: sf1
+[2026-09-27T05:03:54.337Z] [INFO] [session-manager] Initialized session: act1-normal-1790485434335-1
+[2026-09-27T05:03:54.344Z] [INFO] [session-manager] Initialized session: sf2
+[2026-09-27T05:03:54.347Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:54.348Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.349Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:54.351Z] [INFO] [session-manager] Initialized session: sf3
+[2026-09-27T05:03:54.353Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:54.354Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.354Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:54.356Z] [INFO] [session-manager] Initialized session: ss1
+[2026-09-27T05:03:54.360Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:54.360Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.360Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:54.363Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:54.363Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.364Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:54.364Z] [INFO] [session-manager] Initialized session: ss2
+[2026-09-27T05:03:54.369Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:54.369Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.369Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:54.370Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.371Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:9999/dead
+[2026-09-27T05:03:54.374Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:54.375Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.375Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:54.376Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T05:03:54.377Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T05:03:54.377Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.75)
+[2026-09-27T05:03:54.377Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.378Z] [WARN] [decision-adapter] Primary engine failed: simulated local failure — falling back to local rules
+[2026-09-27T05:03:54.378Z] [WARN] [decision-adapter] Local engine failed — fail-open: ALLOW
+[2026-09-27T05:03:54.379Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.380Z] [INFO] [session-manager] Initialized session: ss3
+[2026-09-27T05:03:54.384Z] [INFO] [session-manager] Initialized session: act2-stuck-1790485434383-2
+[2026-09-27T05:03:54.391Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_callback_should_return_token" failed 4× without progress — automatic block
+[2026-09-27T05:03:54.392Z] [INFO] [enforcement] BLOCK — exit 2: "oauth_callback_should_return_token" failed 4× without progress — automatic block
+[2026-09-27T05:03:54.393Z] [INFO] [session-manager] Initialized session: si1
+[2026-09-27T05:03:54.395Z] [INFO] [session-manager] Initialized session: act3-drift-1790485434394-3
+[2026-09-27T05:03:54.400Z] [INFO] [session-manager] Initialized session: si2
+[2026-09-27T05:03:54.401Z] [INFO] [session-manager] Intent updated for si2: "refactor auth module"
+[2026-09-27T05:03:54.404Z] [INFO] [session-manager] Initialized session: sa1
+[2026-09-27T05:03:54.409Z] [WARN] [session-manager] Could not load session corrupt from disk: Expected property name or '}' in JSON at position 2 (line 1 column 3)
+[2026-09-27T05:03:54.410Z] [WARN] [session-manager] Could not load session corrupt from disk: Expected property name or '}' in JSON at position 2 (line 1 column 3)
+[2026-09-27T05:03:54.410Z] [INFO] [attention-evaluator] Invoking decision engine (2 local signal(s))
+[2026-09-27T05:03:54.410Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.411Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.7)
+[2026-09-27T05:03:54.411Z] [WARN] [session-manager] Session ghost not found — creating empty shell
+[2026-09-27T05:03:54.414Z] [INFO] [session-manager] Initialized session: act4-override-1790485434413-4
+[2026-09-27T05:03:54.416Z] [INFO] [session-manager] Initialized session: ssg1
+[2026-09-27T05:03:54.420Z] [INFO] [attention-evaluator] Deterministic BLOCK: "oauth_test_fail" failed 4× without progress — automatic block
+[2026-09-27T05:03:54.421Z] [INFO] [enforcement] BLOCK — exit 2: "oauth_test_fail" failed 4× without progress — automatic block
+[2026-09-27T05:03:54.421Z] [INFO] [session-manager] Initialized session: ssg2
+[2026-09-27T05:03:54.425Z] [INFO] [session-manager] Override written for session act4-override-1790485434413-4: "developer_confirmed_proceed"
+[2026-09-27T05:03:54.425Z] [INFO] [enforcement] Human override consumed — allowing action (developer_confirmed_proceed)
+[2026-09-27T05:03:54.429Z] [INFO] [session-manager] Initialized session: act5-highimpact-1790485434427-5
+[2026-09-27T05:03:54.436Z] [INFO] [attention-evaluator] Invoking decision engine (2 local signal(s))
+[2026-09-27T05:03:54.437Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.437Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.85)
+[2026-09-27T05:03:54.442Z] [INFO] [session-manager] Initialized session: full-lifecycle-test-1790485434439-6
+[2026-09-27T05:03:54.444Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:54.444Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.445Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:54.446Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:54.446Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.446Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:54.451Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:54.451Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.451Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:54.455Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:54.455Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.455Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:54.461Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:54.461Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.461Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:54.463Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:54.463Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.463Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:54.471Z] [INFO] [session-manager] Initialized session: bounded-history-test-1790485434470-7
+[2026-09-27T05:03:54.488Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:03:54.488Z] [INFO] [decision-adapter] Using local rule-based engine
+[2026-09-27T05:03:54.489Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T05:03:54.646Z] [WARN] [event-normalizer] SessionStart: could not parse payload, using fallback
+[2026-09-27T05:03:54.647Z] [WARN] [event-normalizer] SessionStart: could not parse payload, using fallback
+[2026-09-27T05:03:54.647Z] [ERROR] [bobtention] Internal error in test-hook: unexpected internal error
+Error: unexpected internal error
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:29:15
+    at Module.runHook (/Users/macbookpro/ongoing-project/bobtention/src/utils/errors.ts:24:22)
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:28:7
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:135:14
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:60:26
+    at runTest (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:781:17)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runFiles (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:958:5)
+    at startTests (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:967:3)
+[2026-09-27T05:03:54.649Z] [WARN] [event-normalizer] UserPromptSubmit: could not parse payload
+[2026-09-27T05:03:54.649Z] [ERROR] [bobtention] Internal error in crashing-hook: boom
+Error: boom
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:38:15
+    at Module.runHook (/Users/macbookpro/ongoing-project/bobtention/src/utils/errors.ts:24:22)
+    at /Users/macbookpro/ongoing-project/bobtention/tests/utils/errors.test.ts:37:7
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:135:14
+    at file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:60:26
+    at runTest (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:781:17)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runSuite (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:909:15)
+    at runFiles (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:958:5)
+    at startTests (file:///Users/macbookpro/ongoing-project/bobtention/node_modules/@vitest/runner/dist/index.js:967:3)
+[2026-09-27T05:03:54.649Z] [WARN] [event-normalizer] UserPromptSubmit: could not parse payload
+[2026-09-27T05:03:54.650Z] [WARN] [event-normalizer] UserPromptSubmit: prompt field missing or empty
+[2026-09-27T05:03:54.652Z] [WARN] [event-normalizer] PreToolUse: could not parse payload
+[2026-09-27T05:03:54.652Z] [WARN] [event-normalizer] PreToolUse: could not parse payload
+[2026-09-27T05:03:54.654Z] [WARN] [event-normalizer] PostToolUse: could not parse payload
+[2026-09-27T05:08:59.623Z] [WARN] [session-manager] Session test-123 not found — creating empty shell
+[2026-09-27T05:08:59.631Z] [INFO] [pre-tool-use] Evaluating: write_file [migrations/001_create_tables.sql]
+[2026-09-27T05:08:59.632Z] [INFO] [attention-evaluator] Invoking decision engine (2 local signal(s))
+[2026-09-27T05:08:59.633Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T05:09:00.824Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.63)
+[2026-09-27T05:11:09.042Z] [WARN] [session-manager] Session test-abc not found — creating empty shell
+[2026-09-27T05:11:09.065Z] [INFO] [pre-tool-use] Evaluating: execute_command []
+[2026-09-27T05:11:09.065Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:11:09.066Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T05:11:09.552Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.43)
+[2026-09-27T05:11:14.674Z] [WARN] [session-manager] Session test-abc2 not found — creating empty shell
+[2026-09-27T05:11:14.681Z] [INFO] [pre-tool-use] Evaluating: write_file [migrations/001_create_tables.sql]
+[2026-09-27T05:11:14.682Z] [INFO] [attention-evaluator] Invoking decision engine (2 local signal(s))
+[2026-09-27T05:11:14.682Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T05:11:15.725Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.63)
+[2026-09-27T05:11:21.196Z] [WARN] [session-manager] Session test-post not found — creating empty shell
+[2026-09-27T05:11:21.202Z] [INFO] [post-tool-use] Observed: execute_command []
+[2026-09-27T05:11:21.202Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:11:21.203Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T05:11:21.636Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.43)
+[2026-09-27T05:12:26.214Z] [WARN] [session-manager] Session fix-test-1 not found — creating empty shell
+[2026-09-27T05:12:26.228Z] [INFO] [pre-tool-use] Evaluating: execute_command [node src/db/migrate.ts]
+[2026-09-27T05:12:26.229Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:12:26.230Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T05:12:26.916Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.83)
+[2026-09-27T05:12:32.028Z] [WARN] [session-manager] Session fix-test-2 not found — creating empty shell
+[2026-09-27T05:12:32.035Z] [INFO] [pre-tool-use] Evaluating: execute_command [npx ts-node migrations/run.ts]
+[2026-09-27T05:12:32.036Z] [INFO] [attention-evaluator] Invoking decision engine (2 local signal(s))
+[2026-09-27T05:12:32.037Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T05:12:33.113Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.67)
+[2026-09-27T05:12:37.848Z] [WARN] [event-normalizer] PostToolUse: could not parse payload
+[2026-09-27T05:12:37.850Z] [WARN] [post-tool-use] Could not parse payload — skipping observation
+[2026-09-27T05:15:42.583Z] [INFO] [stop] Session finalized: 9e56a7a350bbaff9f2d75caa3a30ff4b
+[2026-09-27T05:17:39.146Z] [INFO] [session-start] Session initialized: 9e56a7a350bbaff9f2d75caa3a30ff4b
+[2026-09-27T05:17:39.300Z] [INFO] [user-prompt-submit] Intent: "make it proper json format : {
+  "hooks": {
+    "SessionStart": [
+      {
+      …"
+[2026-09-27T05:17:39.317Z] [INFO] [session-manager] Initialized session: 9e56a7a350bbaff9f2d75caa3a30ff4b
+[2026-09-27T05:17:39.318Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T05:17:39.320Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T05:17:41.774Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.52)
+[2026-09-27T05:17:41.775Z] [INFO] [enforcement] BLOCK — exit 2: Laya: intent alignment: drifted

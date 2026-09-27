@@ -2,7 +2,7 @@
  * tests/core/attention-evaluator.test.ts
  *
  * Unit tests for Attention Evaluator (Phase 5 — T5.6).
- * Covers: fast ALLOW, deterministic BLOCK, ambiguous path, engine failure.
+ * Covers: ALLOW (no signals), deterministic BLOCK, ambiguous path, engine failure.
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
@@ -66,11 +66,11 @@ function makeFailure(signature: string, count: number, progressing = false): Fai
 }
 
 // ---------------------------------------------------------------------------
-// Path 1: Fast ALLOW (no signals)
+// Path 1: ALLOW (no signals — engine still runs)
 // ---------------------------------------------------------------------------
 
-describe('evaluateEvent — fast ALLOW', () => {
-  it('returns ALLOW with confidence 1.0 when no signals and no failures', async () => {
+describe('evaluateEvent — ALLOW (no signals)', () => {
+  it('returns ALLOW when no signals and no failures', async () => {
     const state = emptyState();
     const event = toolEvent(['src/auth/login.ts']);
     const config = makeConfig();
@@ -78,7 +78,6 @@ describe('evaluateEvent — fast ALLOW', () => {
     const contract = await evaluateEvent(state, event, config);
 
     expect(contract.decision).toBe('ALLOW');
-    expect(contract.confidence).toBe(1.0);
     expect(contract.signals).toHaveLength(0);
   });
 
@@ -111,7 +110,7 @@ describe('evaluateEvent — fast ALLOW', () => {
 
     const contract = await evaluateEvent(state, event, config);
 
-    // No signals extracted (all disabled) → fast ALLOW
+    // No signals extracted (all disabled) → engine returns ALLOW
     expect(contract.decision).toBe('ALLOW');
   });
 });

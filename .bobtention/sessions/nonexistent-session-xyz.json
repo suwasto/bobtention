@@ -1,0 +1,17 @@
+{
+  "sessionId": "nonexistent-session-xyz",
+  "originalIntent": "",
+  "startTime": 1790447340374,
+  "status": "active",
+  "actions": [],
+  "tests": [],
+  "failures": [],
+  "signals": [],
+  "decisions": [],
+  "overrides": [],
+  "pendingOverride": {
+    "active": true,
+    "reason": "developer_confirmed",
+    "scope": "next_action"
+  }
+}

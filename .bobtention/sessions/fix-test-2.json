@@ -1,0 +1,59 @@
+{
+  "sessionId": "fix-test-2",
+  "originalIntent": "",
+  "startTime": 1790485952031,
+  "status": "active",
+  "actions": [
+    {
+      "tool": "execute_command",
+      "input": {
+        "command": "npx ts-node migrations/run.ts"
+      },
+      "output": {},
+      "files": [
+        "npx ts-node migrations/run.ts"
+      ],
+      "timestamp": 1790485952027
+    }
+  ],
+  "tests": [],
+  "failures": [],
+  "signals": [
+    {
+      "type": "HIGH_IMPACT_CHANGE",
+      "severity": 0.65,
+      "timestamp": 1790485952034,
+      "detail": "File \"npx ts-node migrations/run.ts\" matches high-impact pattern \"migration|schema\" (schema-change)"
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "ALLOW",
+      "reason": "Laya: all guardrails passed (intent_alignment → aligned)",
+      "confidence": 0.67,
+      "timestamp": 1790485953114,
+      "engine": "laya",
+      "trigger": {
+        "tool": "execute_command",
+        "files": [
+          "npx ts-node migrations/run.ts"
+        ]
+      },
+      "layaDetail": [
+        {
+          "question": "intent_alignment",
+          "choice": "aligned",
+          "decision": "ALLOW",
+          "confidence": 0.787
+        },
+        {
+          "question": "guardrail_high_impact_change",
+          "choice": "safe",
+          "decision": "ALLOW",
+          "confidence": 0.4451
+        }
+      ]
+    }
+  ],
+  "overrides": []
+}

@@ -1,0 +1,46 @@
+{
+  "sessionId": "fix-test-1",
+  "originalIntent": "",
+  "startTime": 1790485946216,
+  "status": "active",
+  "actions": [
+    {
+      "tool": "execute_command",
+      "input": {
+        "command": "node src/db/migrate.ts"
+      },
+      "output": {},
+      "files": [
+        "node src/db/migrate.ts"
+      ],
+      "timestamp": 1790485946213
+    }
+  ],
+  "tests": [],
+  "failures": [],
+  "signals": [],
+  "decisions": [
+    {
+      "decision": "ALLOW",
+      "reason": "Laya: all guardrails passed (intent_alignment → aligned)",
+      "confidence": 0.83,
+      "timestamp": 1790485946916,
+      "engine": "laya",
+      "trigger": {
+        "tool": "execute_command",
+        "files": [
+          "node src/db/migrate.ts"
+        ]
+      },
+      "layaDetail": [
+        {
+          "question": "intent_alignment",
+          "choice": "aligned",
+          "decision": "ALLOW",
+          "confidence": 0.8272
+        }
+      ]
+    }
+  ],
+  "overrides": []
+}

@@ -85,83 +85,25 @@ mkdir -p "$BOB_DIR"
 # Resolve path to dist/hooks relative to the target workspace
 HOOKS_DIR="$BOBTENTION_DIR/dist/hooks"
 
-# SessionStart / UserPromptSubmit / Stop use flat type/command structure.
-# PreToolUse / PostToolUse require the matcher-wrapped structure (AGENTS.md).
+# All hooks use the matcher-wrapped structure (README.md / Bob hook contract).
 HOOK_COMMANDS=$(cat << EOF
 {
   "hooks": {
-    "SessionStart": [
-      {
-        "type": "command",
-        "command": "node $HOOKS_DIR/session-start.js",
-        "timeout": 5
-      }
-    ],
-    "UserPromptSubmit": [
-      {
-        "type": "command",
-        "command": "node $HOOKS_DIR/user-prompt-submit.js",
-        "timeout": 5
-      }
-    ],
-    "PreToolUse": [
-      {
-        "matcher": ".*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node $HOOKS_DIR/pre-tool-use.js",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": ".*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node $HOOKS_DIR/post-tool-use.js",
-            "timeout": 5
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "type": "command",
-        "command": "node $HOOKS_DIR/stop.js",
-        "timeout": 5
-      }
-    ]
+    "SessionStart": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "node $HOOKS_DIR/session-start.js", "timeout": 5 }] }],
+    "UserPromptSubmit": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "node $HOOKS_DIR/user-prompt-submit.js", "timeout": 5 }] }],
+    "PreToolUse": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "node $HOOKS_DIR/pre-tool-use.js", "timeout": 10 }] }],
+    "PostToolUse": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "node $HOOKS_DIR/post-tool-use.js", "timeout": 5 }] }],
+    "Stop": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "node $HOOKS_DIR/stop.js", "timeout": 5 }] }]
   }
 }
 EOF
 )
 
+# Always write the canonical settings — the content is deterministic and safe to overwrite.
+# This ensures re-runs correct any previously installed wrong format.
 if [ -f "$SETTINGS_FILE" ]; then
-  # Merge: only add hooks not already present (use node for safe JSON merge)
-  node - "$SETTINGS_FILE" << 'NODEEOF'
-const fs = require('fs');
-const path = process.argv[2];
-const existing = JSON.parse(fs.readFileSync(path, 'utf8'));
-// Already has bobtention hooks if session-start is registered
-const hasBobtention = JSON.stringify(existing).includes('session-start.js') ||
-                      JSON.stringify(existing).includes('bobtention');
-if (hasBobtention) {
-  process.stderr.write('        Bobtention hooks already registered in .bob/settings.json — skipping\n');
-} else {
-  process.stderr.write('        Merging Bobtention hooks into existing .bob/settings.json\n');
-}
-NODEEOF
-  # Simple approach: if bobtention not present, write the canonical settings
-  if ! grep -q "session-start.js\|bobtention" "$SETTINGS_FILE" 2>/dev/null; then
-    echo "$HOOK_COMMANDS" > "$SETTINGS_FILE"
-    echo "        ✓ Hooks merged into .bob/settings.json"
-  else
-    echo "        ✓ Bobtention hooks already registered"
-  fi
+  echo "$HOOK_COMMANDS" > "$SETTINGS_FILE"
+  echo "        ✓ .bob/settings.json updated with Bobtention hooks"
 else
   echo "$HOOK_COMMANDS" > "$SETTINGS_FILE"
   echo "        ✓ .bob/settings.json created with Bobtention hooks"

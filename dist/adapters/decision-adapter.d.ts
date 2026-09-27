@@ -47,10 +47,8 @@ export declare class LocalRuleAdapter implements DecisionEngine {
 export declare function createDecisionEngine(config: BobtentionConfig): DecisionEngine;
 /**
  * Evaluate with fallback chain:
- *   Laya engine → LocalRuleAdapter (fallback) → ALLOW+warn (fail-open)
+ *   primary engine → LocalRuleAdapter → ALLOW+warn (fail-open)
  *
- * Laya is always the primary when an endpoint is configured. Local rules
- * are the fallback for any Laya unavailability (network error, timeout, etc.).
  * Called by AttentionEvaluator — never invoke Laya directly outside this file.
  */
 export declare function evaluateWithFallback(context: DecisionContext, config: BobtentionConfig): Promise<DecisionContract>;

@@ -1,0 +1,38 @@
+{
+  "sessionId": "9e56a7a350bbaff9f2d75caa3a30ff4b",
+  "originalIntent": "make it proper json format : {\n  \"hooks\": {\n    \"SessionStart\": [\n      {\n        \"matcher\": \".*\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"node /path/to/bobtention/dist/hooks/session-start.js\",\n            \"timeout\": 5\n          }\n        ]\n      }\n    ],\n    \"UserPromptSubmit\": [\n      {\n        \"matcher\": \".*\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"node /path/to/bobtention/dist/hooks/user-prompt-submit.js\",\n            \"timeout\": 5\n          }\n        ]\n      }\n    ],\n    \"PreToolUse\": [\n      {\n        \"matcher\": \".*\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"node /path/to/bobtention/dist/hooks/pre-tool-use.js\",\n            \"timeout\": 10\n          }\n        ]\n      }\n    ],\n    \"PostToolUse\": [\n      {\n        \"matcher\": \".*\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"node /path/to/bobtention/dist/hooks/post-tool-use.js\",\n            \"timeout\": 5\n          }\n        ]\n      }\n    ],\n    \"Stop\": [\n      {\n        \"matcher\": \".*\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"node /path/to/bobtention/dist/hooks/stop.js\",\n            \"timeout\": 5\n          }\n        ]\n      }\n    ]\n  }\n}",
+  "startTime": 1790486259304,
+  "status": "active",
+  "actions": [],
+  "tests": [],
+  "failures": [],
+  "signals": [],
+  "decisions": [
+    {
+      "decision": "BLOCK",
+      "reason": "Laya: intent alignment: drifted",
+      "confidence": 0.52,
+      "timestamp": 1790486261775,
+      "engine": "laya",
+      "trigger": {
+        "tool": "user_prompt",
+        "files": []
+      },
+      "layaDetail": [
+        {
+          "question": "intent_alignment",
+          "choice": "drifted",
+          "decision": "BLOCK",
+          "confidence": 0.5221
+        }
+      ]
+    }
+  ],
+  "overrides": [],
+  "blockedAction": {
+    "tool": "prompt",
+    "files": [],
+    "reason": "Laya: intent alignment: drifted",
+    "timestamp": 1790486261775
+  }
+}

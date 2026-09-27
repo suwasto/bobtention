@@ -8,9 +8,9 @@
  *
  * Decision paths:
  *
- *   1. Fast ALLOW:   no signals present → skip engine, return ALLOW immediately
- *   2. Deterministic BLOCK: repeated identical failures above hard threshold → BLOCK without engine
- *   3. Ambiguous:    signals present but not deterministic → build DecisionContext → evaluateWithFallback
+ *   1. Deterministic BLOCK: repeated identical failures above hard threshold → BLOCK without engine
+ *   2. Deterministic BLOCK: any signal severity ≥ blockThreshold → BLOCK without engine
+ *   3. Always:       build DecisionContext → evaluateWithFallback (Laya evaluates every event)
  *
  * This module is the ONLY caller of context-builder and decision-adapter.
  * Hook entry points call evaluateEvent() and then pass the contract to the Enforcement Layer.

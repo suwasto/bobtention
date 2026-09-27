@@ -9,9 +9,9 @@
  *
  * Decision paths:
  *
- *   1. Fast ALLOW:   no signals present → skip engine, return ALLOW immediately
- *   2. Deterministic BLOCK: repeated identical failures above hard threshold → BLOCK without engine
- *   3. Ambiguous:    signals present but not deterministic → build DecisionContext → evaluateWithFallback
+ *   1. Deterministic BLOCK: repeated identical failures above hard threshold → BLOCK without engine
+ *   2. Deterministic BLOCK: any signal severity ≥ blockThreshold → BLOCK without engine
+ *   3. Always:       build DecisionContext → evaluateWithFallback (Laya evaluates every event)
  *
  * This module is the ONLY caller of context-builder and decision-adapter.
  * Hook entry points call evaluateEvent() and then pass the contract to the Enforcement Layer.
@@ -66,11 +66,6 @@ async function evaluateEvent(state, event, config) {
             trigger,
         };
     }
-    // --- Path 1: fast ALLOW — no signals ---
-    if (allSignals.length === 0) {
-        logger_1.logger.info('[attention-evaluator] Fast ALLOW: no signals');
-        return { ...fastAllow('No signals detected'), engine: 'deterministic', trigger };
-    }
     // --- Path 2b: deterministic BLOCK — signal severity meets blockThreshold ---
     // Laya resolves ambiguity; it cannot override a signal that already exceeds the
     // operator-configured hard threshold.
@@ -86,8 +81,10 @@ async function evaluateEvent(state, event, config) {
             trigger,
         };
     }
-    // --- Path 3: ambiguous — invoke decision engine ---
-    logger_1.logger.info(`[attention-evaluator] Ambiguous: ${allSignals.length} signal(s) — invoking decision engine`);
+    // --- Path 3: invoke decision engine unconditionally ---
+    // Laya evaluates every event regardless of local signal count so it can use
+    // its own full context — local detectors augment, they do not gate Laya.
+    logger_1.logger.info(`[attention-evaluator] Invoking decision engine (${allSignals.length} local signal(s))`);
     const context = (0, context_builder_1.buildDecisionContext)(state, event, allSignals);
     const contract = await (0, decision_adapter_1.evaluateWithFallback)(context, config);
     logger_1.logger.info(`[attention-evaluator] Engine decision: ${contract.decision} (confidence=${contract.confidence})`);

@@ -1,0 +1,59 @@
+{
+  "sessionId": "test-abc2",
+  "originalIntent": "",
+  "startTime": 1790485874676,
+  "status": "active",
+  "actions": [
+    {
+      "tool": "write_file",
+      "input": {
+        "path": "migrations/001_create_tables.sql"
+      },
+      "output": {},
+      "files": [
+        "migrations/001_create_tables.sql"
+      ],
+      "timestamp": 1790485874674
+    }
+  ],
+  "tests": [],
+  "failures": [],
+  "signals": [
+    {
+      "type": "HIGH_IMPACT_CHANGE",
+      "severity": 0.65,
+      "timestamp": 1790485874679,
+      "detail": "File \"migrations/001_create_tables.sql\" matches high-impact pattern \"migration|schema\" (schema-change)"
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "ALLOW",
+      "reason": "Laya: all guardrails passed (intent_alignment → aligned)",
+      "confidence": 0.63,
+      "timestamp": 1790485875725,
+      "engine": "laya",
+      "trigger": {
+        "tool": "write_file",
+        "files": [
+          "migrations/001_create_tables.sql"
+        ]
+      },
+      "layaDetail": [
+        {
+          "question": "intent_alignment",
+          "choice": "aligned",
+          "decision": "ALLOW",
+          "confidence": 0.7174
+        },
+        {
+          "question": "guardrail_high_impact_change",
+          "choice": "safe",
+          "decision": "ALLOW",
+          "confidence": 0.4622
+        }
+      ]
+    }
+  ],
+  "overrides": []
+}

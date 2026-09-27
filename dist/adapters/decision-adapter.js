@@ -362,10 +362,8 @@ exports.LocalRuleAdapter = LocalRuleAdapter;
  * Returns a LayaAdapter or LocalRuleAdapter.
  */
 function createDecisionEngine(config) {
-    // Laya is always preferred when an endpoint is configured.
-    // Local engine is only used when explicitly forced via provider:'local'
-    // AND no endpoint is set — normal usage keeps Laya as primary.
-    if (config.decisionEngine.endpoint) {
+    if (config.decisionEngine.provider === 'laya' &&
+        config.decisionEngine.endpoint) {
         logger_1.logger.info(`[decision-adapter] Using Laya engine at ${config.decisionEngine.endpoint}`);
         return new LayaAdapter(config.decisionEngine.endpoint, config.decisionEngine.timeout);
     }
@@ -374,36 +372,32 @@ function createDecisionEngine(config) {
 }
 /**
  * Evaluate with fallback chain:
- *   Laya engine → LocalRuleAdapter (fallback) → ALLOW+warn (fail-open)
+ *   primary engine → LocalRuleAdapter → ALLOW+warn (fail-open)
  *
- * Laya is always the primary when an endpoint is configured. Local rules
- * are the fallback for any Laya unavailability (network error, timeout, etc.).
  * Called by AttentionEvaluator — never invoke Laya directly outside this file.
  */
 async function evaluateWithFallback(context, config) {
     const primary = createDecisionEngine(config);
-    const usingLaya = !!config.decisionEngine.endpoint;
     try {
         return await primary.evaluate(context);
     }
     catch (primaryErr) {
         const msg = primaryErr instanceof Error ? primaryErr.message : String(primaryErr);
-        if (usingLaya) {
-            // Laya unavailable — fall back to local rules
-            logger_1.logger.warn(`[decision-adapter] Laya engine failed: ${msg} — falling back to local rules`);
-            try {
-                const fallback = new LocalRuleAdapter(config.autonomy.watchThreshold, config.autonomy.blockThreshold);
-                return await fallback.evaluate(context);
-            }
-            catch (fallbackErr) {
-                const fbMsg = fallbackErr instanceof Error ? fallbackErr.message : String(fallbackErr);
-                logger_1.logger.error(`[decision-adapter] Fallback local engine failed: ${fbMsg} — fail-open: ALLOW`);
-                return failOpenContract();
-            }
+        logger_1.logger.warn(`[decision-adapter] Primary engine failed: ${msg} — falling back to local rules`);
+        // If primary was already local, no point trying it again
+        if (config.decisionEngine.provider === 'local') {
+            logger_1.logger.warn('[decision-adapter] Local engine failed — fail-open: ALLOW');
+            return failOpenContract();
         }
-        // Primary was already local and failed — fail-open
-        logger_1.logger.error(`[decision-adapter] Local engine failed: ${msg} — fail-open: ALLOW`);
-        return failOpenContract();
+        try {
+            const fallback = new LocalRuleAdapter(config.autonomy.watchThreshold, config.autonomy.blockThreshold);
+            return await fallback.evaluate(context);
+        }
+        catch (fallbackErr) {
+            const fbMsg = fallbackErr instanceof Error ? fallbackErr.message : String(fallbackErr);
+            logger_1.logger.error(`[decision-adapter] Fallback engine failed: ${fbMsg} — fail-open: ALLOW`);
+            return failOpenContract();
+        }
     }
 }
 // ---------------------------------------------------------------------------

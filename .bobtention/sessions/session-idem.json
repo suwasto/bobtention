@@ -1,0 +1,17 @@
+{
+  "sessionId": "session-idem",
+  "originalIntent": "",
+  "startTime": 1790447340377,
+  "status": "active",
+  "actions": [],
+  "tests": [],
+  "failures": [],
+  "signals": [],
+  "decisions": [],
+  "overrides": [],
+  "pendingOverride": {
+    "active": true,
+    "reason": "second_reason",
+    "scope": "next_action"
+  }
+}
