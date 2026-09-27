@@ -1,0 +1,116 @@
+{
+  "sessionId": "a68793c87be68a58d3f59389cf8e1303",
+  "originalIntent": "",
+  "startTime": 1790517756469,
+  "status": "active",
+  "actions": [
+    {
+      "tool": "read_file",
+      "input": {
+        "path": ".bob/settings.json"
+      },
+      "output": {},
+      "files": [
+        ".bob/settings.json"
+      ],
+      "timestamp": 1790517787376
+    },
+    {
+      "tool": "read_file",
+      "input": {
+        "path": ".bob/settings.json"
+      },
+      "output": "Contents of file .bob/settings.json:\n\n1 | {\n2 |   \"hooks\": {\n3 |     \"SessionStart\": [\n4 |       {\n5 |         \"hooks\": [{ \"type\": \"command\", \"command\": \"/usr/local/bin/node /Users/macbookpro/ongoing-project/bobtention/dist/hooks/session-start.js\", \"timeout\": 5 }]\n6 |       }\n7 |     ],\n8 |     \"UserPromptSubmit\": [\n9 |       {\n10 |         \"hooks\": [{ \"type\": \"command\", \"command\": \"/usr/local/bin/node /Users/macbookpro/ongoing-project/bobtention/dist/hooks/user-prompt-submit.js\", \"timeout\": 5 }]\n11 |       }\n12 |     ],\n13 |     \"PreToolUse\": [\n14 |       {\n15 |         \"matcher\": \".*\",\n16 |         \"hooks\": [{ \"type\": \"command\", \"command\": \"/usr/local/bin/node /Users/macbookpro/ongoing-project/bobtention/dist/hooks/pre-tool-use.js\", \"timeout\": 10 }]\n17 |       }\n18 |     ],\n19 |     \"PostToolUse\": [\n20 |       {\n21 |         \"matcher\": \".*\",\n22 |         \"hooks\": [{ \"type\": \"command\", \"command\": \"/usr/local/bin/node /Users/macbookpro/ongoing-project/bobtention/dist/hooks/post-tool-use.js\", \"timeout\": 5 }]\n23 |       }\n24 |     ],\n25 |     \"Stop\": [\n26 |       {\n27 |         \"hooks\": [{ \"type\": \"command\", \"command\": \"/usr/local/bin/node /Users/macbookpro/ongoing-project/bobtention/dist/hooks/stop.js\", \"timeout\": 5 }]\n28 |       }\n29 |     ]\n30 |   }\n31 | }\n32 | ",
+      "files": [
+        ".bob/settings.json"
+      ],
+      "timestamp": 1790517789398
+    }
+  ],
+  "tests": [],
+  "failures": [],
+  "signals": [],
+  "decisions": [
+    {
+      "decision": "ALLOW",
+      "reason": "Laya: all guardrails passed (intent_alignment → aligned)",
+      "confidence": 0.39,
+      "timestamp": 1790517757805,
+      "engine": "laya",
+      "trigger": {
+        "tool": "user_prompt",
+        "files": []
+      },
+      "layaDetail": [
+        {
+          "question": "intent_alignment",
+          "choice": "aligned",
+          "decision": "ALLOW",
+          "confidence": 0.3922
+        }
+      ]
+    },
+    {
+      "decision": "ALLOW",
+      "reason": "Laya: all guardrails passed (intent_alignment → aligned)",
+      "confidence": 0.39,
+      "timestamp": 1790517784043,
+      "engine": "laya",
+      "trigger": {
+        "tool": "user_prompt",
+        "files": []
+      },
+      "layaDetail": [
+        {
+          "question": "intent_alignment",
+          "choice": "aligned",
+          "decision": "ALLOW",
+          "confidence": 0.3922
+        }
+      ]
+    },
+    {
+      "decision": "ALLOW",
+      "reason": "Laya: all guardrails passed (intent_alignment → aligned)",
+      "confidence": 0.68,
+      "timestamp": 1790517789167,
+      "engine": "laya",
+      "trigger": {
+        "tool": "read_file",
+        "files": [
+          ".bob/settings.json"
+        ]
+      },
+      "layaDetail": [
+        {
+          "question": "intent_alignment",
+          "choice": "aligned",
+          "decision": "ALLOW",
+          "confidence": 0.6762
+        }
+      ]
+    },
+    {
+      "decision": "WATCH",
+      "reason": "Laya: intent alignment: minor_drift",
+      "confidence": 0.41,
+      "timestamp": 1790517790833,
+      "engine": "laya",
+      "trigger": {
+        "tool": "read_file",
+        "files": [
+          ".bob/settings.json"
+        ]
+      },
+      "layaDetail": [
+        {
+          "question": "intent_alignment",
+          "choice": "minor_drift",
+          "decision": "WATCH",
+          "confidence": 0.4133
+        }
+      ]
+    }
+  ],
+  "overrides": []
+}

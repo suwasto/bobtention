@@ -1,0 +1,12 @@
+{
+  "sessionId": "test-hookcheck",
+  "originalIntent": "",
+  "startTime": 1790517718324,
+  "status": "active",
+  "actions": [],
+  "tests": [],
+  "failures": [],
+  "signals": [],
+  "decisions": [],
+  "overrides": []
+}

@@ -1,0 +1,66 @@
+{
+  "sessionId": "test-live",
+  "originalIntent": "the hook not working",
+  "startTime": 1790517319875,
+  "status": "active",
+  "actions": [
+    {
+      "tool": "write_file",
+      "input": {
+        "path": "foo.ts",
+        "content": "x"
+      },
+      "output": {},
+      "files": [
+        "foo.ts"
+      ],
+      "timestamp": 1790517332137
+    }
+  ],
+  "tests": [],
+  "failures": [],
+  "signals": [],
+  "decisions": [
+    {
+      "decision": "WATCH",
+      "reason": "Laya: intent alignment: minor_drift",
+      "confidence": 0.45,
+      "timestamp": 1790517320593,
+      "engine": "laya",
+      "trigger": {
+        "tool": "user_prompt",
+        "files": []
+      },
+      "layaDetail": [
+        {
+          "question": "intent_alignment",
+          "choice": "minor_drift",
+          "decision": "WATCH",
+          "confidence": 0.4465
+        }
+      ]
+    },
+    {
+      "decision": "ALLOW",
+      "reason": "Laya: all guardrails passed (intent_alignment → aligned)",
+      "confidence": 0.4,
+      "timestamp": 1790517332767,
+      "engine": "laya",
+      "trigger": {
+        "tool": "write_file",
+        "files": [
+          "foo.ts"
+        ]
+      },
+      "layaDetail": [
+        {
+          "question": "intent_alignment",
+          "choice": "aligned",
+          "decision": "ALLOW",
+          "confidence": 0.398
+        }
+      ]
+    }
+  ],
+  "overrides": []
+}

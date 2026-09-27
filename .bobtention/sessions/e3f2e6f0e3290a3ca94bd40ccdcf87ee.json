@@ -1,0 +1,61 @@
+{
+  "sessionId": "e3f2e6f0e3290a3ca94bd40ccdcf87ee",
+  "originalIntent": "",
+  "startTime": 1790517965090,
+  "status": "active",
+  "actions": [
+    {
+      "tool": "execute_command",
+      "input": {
+        "command": "git checkout -- .bob/settings.json .bobtention/dashboard.html .bobtention/logs/bobtention.log dist/hooks/session-start.js dist/hooks/session-start.js.map src/hooks/session-start.ts"
+      },
+      "output": {},
+      "files": [],
+      "timestamp": 1790517971539
+    }
+  ],
+  "tests": [],
+  "failures": [],
+  "signals": [],
+  "decisions": [
+    {
+      "decision": "ALLOW",
+      "reason": "Laya: all guardrails passed (intent_alignment → aligned)",
+      "confidence": 0.39,
+      "timestamp": 1790517965835,
+      "engine": "laya",
+      "trigger": {
+        "tool": "user_prompt",
+        "files": []
+      },
+      "layaDetail": [
+        {
+          "question": "intent_alignment",
+          "choice": "aligned",
+          "decision": "ALLOW",
+          "confidence": 0.3922
+        }
+      ]
+    },
+    {
+      "decision": "ALLOW",
+      "reason": "Laya: all guardrails passed (intent_alignment → aligned)",
+      "confidence": 0.43,
+      "timestamp": 1790517972108,
+      "engine": "laya",
+      "trigger": {
+        "tool": "execute_command",
+        "files": []
+      },
+      "layaDetail": [
+        {
+          "question": "intent_alignment",
+          "choice": "aligned",
+          "decision": "ALLOW",
+          "confidence": 0.4343
+        }
+      ]
+    }
+  ],
+  "overrides": []
+}

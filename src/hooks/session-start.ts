@@ -16,6 +16,8 @@
 
 import { runHook } from '../utils/errors';
 import { readStdin, normalizeSessionStart } from '../core/event-normalizer';
+import { loadConfig } from '../core/config';
+import { initSession } from '../core/session-manager';
 import { logger } from '../utils/logger';
 
 void runHook('session-start', async () => {
@@ -26,7 +28,11 @@ void runHook('session-start', async () => {
     logger.warn('[session-start] Failed to parse session payload, proceeding with empty session');
   }
 
+  const config = loadConfig();
   const sessionId = event?.sessionId ?? `session-${Date.now()}`;
+
+  // Initialize (or resume) session on disk so it exists before any tool use
+  initSession(sessionId, '', config);
   logger.info(`[session-start] Session initialized: ${sessionId}`);
 
   // Write context string to stdout — Bob injects this into the session

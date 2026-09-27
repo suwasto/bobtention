@@ -1,9 +1,31 @@
 {
   "hooks": {
-    "SessionStart": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "node dist/hooks/session-start.js", "timeout": 5 }] }],
-    "UserPromptSubmit": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "node dist/hooks/user-prompt-submit.js", "timeout": 5 }] }],
-    "PreToolUse": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "node dist/hooks/pre-tool-use.js", "timeout": 10 }] }],
-    "PostToolUse": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "node dist/hooks/post-tool-use.js", "timeout": 5 }] }],
-    "Stop": [{ "matcher": ".*", "hooks": [{ "type": "command", "command": "node dist/hooks/stop.js", "timeout": 5 }] }]
+    "SessionStart": [
+      {
+        "hooks": [{ "type": "command", "command": "/usr/local/bin/node /Users/macbookpro/ongoing-project/bobtention/dist/hooks/session-start.js", "timeout": 5 }]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [{ "type": "command", "command": "/usr/local/bin/node /Users/macbookpro/ongoing-project/bobtention/dist/hooks/user-prompt-submit.js", "timeout": 5 }]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [{ "type": "command", "command": "/usr/local/bin/node /Users/macbookpro/ongoing-project/bobtention/dist/hooks/pre-tool-use.js", "timeout": 10 }]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [{ "type": "command", "command": "/usr/local/bin/node /Users/macbookpro/ongoing-project/bobtention/dist/hooks/post-tool-use.js", "timeout": 5 }]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [{ "type": "command", "command": "/usr/local/bin/node /Users/macbookpro/ongoing-project/bobtention/dist/hooks/stop.js", "timeout": 5 }]
+      }
+    ]
   }
 }

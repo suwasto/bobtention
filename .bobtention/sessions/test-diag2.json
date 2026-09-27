@@ -1,0 +1,46 @@
+{
+  "sessionId": "test-diag2",
+  "originalIntent": "",
+  "startTime": 1790516043107,
+  "status": "active",
+  "actions": [
+    {
+      "tool": "read_file",
+      "input": {
+        "path": "package.json"
+      },
+      "output": {},
+      "files": [
+        "package.json"
+      ],
+      "timestamp": 1790516043104
+    }
+  ],
+  "tests": [],
+  "failures": [],
+  "signals": [],
+  "decisions": [
+    {
+      "decision": "ALLOW",
+      "reason": "Laya: all guardrails passed (intent_alignment → aligned)",
+      "confidence": 0.59,
+      "timestamp": 1790516043909,
+      "engine": "laya",
+      "trigger": {
+        "tool": "read_file",
+        "files": [
+          "package.json"
+        ]
+      },
+      "layaDetail": [
+        {
+          "question": "intent_alignment",
+          "choice": "aligned",
+          "decision": "ALLOW",
+          "confidence": 0.5853
+        }
+      ]
+    }
+  ],
+  "overrides": []
+}
