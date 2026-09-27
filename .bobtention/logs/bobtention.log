@@ -1001,3 +1001,147 @@ Error: boom
 [2026-09-27T05:17:39.320Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
 [2026-09-27T05:17:41.774Z] [INFO] [attention-evaluator] Engine decision: BLOCK (confidence=0.52)
 [2026-09-27T05:17:41.775Z] [INFO] [enforcement] BLOCK — exit 2: Laya: intent alignment: drifted
+[2026-09-27T11:12:11.640Z] [INFO] [session-start] Session initialized: 82ba873644c10abcde981bf0798af092
+[2026-09-27T11:12:11.797Z] [INFO] [user-prompt-submit] Intent: "update @vscode-extension/README.md Quick install (any Bob workspace) can be made…"
+[2026-09-27T11:12:11.813Z] [INFO] [session-manager] Initialized session: 82ba873644c10abcde981bf0798af092
+[2026-09-27T11:12:11.813Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T11:12:11.814Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:12:11.935Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:12:11.936Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T11:12:15.652Z] [INFO] [pre-tool-use] Evaluating: read_file [vscode-extension/README.md]
+[2026-09-27T11:12:15.655Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T11:12:15.656Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:12:15.715Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:12:15.715Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T11:12:15.871Z] [INFO] [post-tool-use] Observed: read_file [vscode-extension/README.md]
+[2026-09-27T11:12:15.873Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T11:12:15.874Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:12:15.934Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:12:15.935Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T11:12:21.941Z] [INFO] [pre-tool-use] Evaluating: apply_diff [vscode-extension/README.md]
+[2026-09-27T11:12:21.947Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T11:12:21.948Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:12:22.010Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:12:22.011Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T11:12:23.207Z] [INFO] [post-tool-use] Observed: apply_diff [vscode-extension/README.md]
+[2026-09-27T11:12:23.210Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T11:12:23.210Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:12:23.271Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:12:23.272Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T11:12:26.365Z] [INFO] [pre-tool-use] Evaluating: execute_command []
+[2026-09-27T11:12:26.368Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T11:12:26.369Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:12:26.431Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:12:26.433Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T11:12:32.667Z] [INFO] [post-tool-use] Observed: execute_command []
+[2026-09-27T11:12:32.669Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T11:12:32.670Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:12:32.736Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:12:32.736Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T11:12:35.337Z] [INFO] [stop] Session finalized: 82ba873644c10abcde981bf0798af092
+[2026-09-27T11:13:19.943Z] [INFO] [user-prompt-submit] Intent: "i need that quick install in @README.md also…"
+[2026-09-27T11:13:19.957Z] [INFO] [session-manager] Resumed session: 82ba873644c10abcde981bf0798af092
+[2026-09-27T11:13:19.967Z] [INFO] [session-manager] Intent updated for 82ba873644c10abcde981bf0798af092: "i need that quick install in @README.md also"
+[2026-09-27T11:13:19.967Z] [INFO] [user-prompt-submit] Task intent updated
+[2026-09-27T11:13:19.967Z] [INFO] [attention-evaluator] Invoking decision engine (0 local signal(s))
+[2026-09-27T11:13:19.968Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:13:20.077Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:13:20.077Z] [INFO] [attention-evaluator] Engine decision: ALLOW (confidence=0.95)
+[2026-09-27T11:13:22.342Z] [INFO] [pre-tool-use] Evaluating: read_file [README.md]
+[2026-09-27T11:13:22.346Z] [INFO] [attention-evaluator] Invoking decision engine (2 local signal(s))
+[2026-09-27T11:13:22.347Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:13:22.401Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:13:22.402Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.6)
+[2026-09-27T11:13:22.402Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries: 1 new directory beyond initial scope (vscode-extension)
+[2026-09-27T11:13:22.540Z] [INFO] [post-tool-use] Observed: read_file [README.md]
+[2026-09-27T11:13:22.545Z] [INFO] [attention-evaluator] Invoking decision engine (3 local signal(s))
+[2026-09-27T11:13:22.545Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:13:22.603Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:13:22.604Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.6)
+[2026-09-27T11:13:29.933Z] [INFO] [pre-tool-use] Evaluating: apply_diff [README.md]
+[2026-09-27T11:13:29.937Z] [INFO] [attention-evaluator] Invoking decision engine (4 local signal(s))
+[2026-09-27T11:13:29.938Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:13:29.996Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:13:29.996Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.6)
+[2026-09-27T11:13:29.997Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries: 1 new directory beyond initial scope (vscode-extension)
+[2026-09-27T11:13:31.197Z] [INFO] [post-tool-use] Observed: apply_diff [README.md]
+[2026-09-27T11:13:31.203Z] [INFO] [attention-evaluator] Invoking decision engine (5 local signal(s))
+[2026-09-27T11:13:31.204Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:13:31.264Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:13:31.265Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.6)
+[2026-09-27T11:13:33.465Z] [INFO] [pre-tool-use] Evaluating: execute_command []
+[2026-09-27T11:13:33.468Z] [INFO] [attention-evaluator] Invoking decision engine (6 local signal(s))
+[2026-09-27T11:13:33.469Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:13:33.538Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:13:33.539Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.6)
+[2026-09-27T11:13:33.539Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries: 1 new directory beyond initial scope (vscode-extension)
+[2026-09-27T11:13:37.363Z] [INFO] [post-tool-use] Observed: execute_command []
+[2026-09-27T11:13:37.366Z] [INFO] [attention-evaluator] Invoking decision engine (7 local signal(s))
+[2026-09-27T11:13:37.367Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:13:37.436Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:13:37.437Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.6)
+[2026-09-27T11:13:39.810Z] [INFO] [stop] Session finalized: 82ba873644c10abcde981bf0798af092
+[2026-09-27T11:13:51.074Z] [INFO] [user-prompt-submit] Intent: "check all staged change add and commit…"
+[2026-09-27T11:13:51.077Z] [INFO] [session-manager] Resumed session: 82ba873644c10abcde981bf0798af092
+[2026-09-27T11:13:51.081Z] [INFO] [session-manager] Intent updated for 82ba873644c10abcde981bf0798af092: "check all staged change add and commit"
+[2026-09-27T11:13:51.081Z] [INFO] [user-prompt-submit] Task intent updated
+[2026-09-27T11:13:51.082Z] [INFO] [attention-evaluator] Invoking decision engine (6 local signal(s))
+[2026-09-27T11:13:51.082Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:13:51.141Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:13:51.142Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.6)
+[2026-09-27T11:13:51.143Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries: 1 new directory beyond initial scope (vscode-extension)
+[2026-09-27T11:13:53.457Z] [INFO] [pre-tool-use] Evaluating: execute_command []
+[2026-09-27T11:13:53.460Z] [INFO] [attention-evaluator] Invoking decision engine (8 local signal(s))
+[2026-09-27T11:13:53.460Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:13:53.520Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:13:53.521Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.6)
+[2026-09-27T11:13:53.522Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries: 1 new directory beyond initial scope (vscode-extension)
+[2026-09-27T11:13:54.563Z] [INFO] [post-tool-use] Observed: execute_command []
+[2026-09-27T11:13:54.566Z] [INFO] [attention-evaluator] Invoking decision engine (9 local signal(s))
+[2026-09-27T11:13:54.567Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:13:54.626Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:13:54.627Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.6)
+[2026-09-27T11:13:59.380Z] [INFO] [pre-tool-use] Evaluating: execute_command []
+[2026-09-27T11:13:59.383Z] [INFO] [attention-evaluator] Invoking decision engine (10 local signal(s))
+[2026-09-27T11:13:59.384Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:13:59.440Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:13:59.441Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.6)
+[2026-09-27T11:13:59.442Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries: 1 new directory beyond initial scope (vscode-extension)
+[2026-09-27T11:14:00.176Z] [INFO] [post-tool-use] Observed: execute_command []
+[2026-09-27T11:14:00.179Z] [INFO] [attention-evaluator] Invoking decision engine (11 local signal(s))
+[2026-09-27T11:14:00.180Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:14:00.237Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:14:00.238Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.6)
+[2026-09-27T11:14:03.883Z] [INFO] [stop] Session finalized: 82ba873644c10abcde981bf0798af092
+[2026-09-27T11:16:34.028Z] [INFO] [user-prompt-submit] Intent: "add @bob_sessions/ and commit…"
+[2026-09-27T11:16:34.034Z] [INFO] [session-manager] Resumed session: 82ba873644c10abcde981bf0798af092
+[2026-09-27T11:16:34.045Z] [INFO] [session-manager] Intent updated for 82ba873644c10abcde981bf0798af092: "add @bob_sessions/ and commit"
+[2026-09-27T11:16:34.045Z] [INFO] [user-prompt-submit] Task intent updated
+[2026-09-27T11:16:34.046Z] [INFO] [attention-evaluator] Invoking decision engine (10 local signal(s))
+[2026-09-27T11:16:34.046Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:16:34.108Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:16:34.109Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.6)
+[2026-09-27T11:16:34.110Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries: 1 new directory beyond initial scope (vscode-extension)
+[2026-09-27T11:16:37.142Z] [INFO] [pre-tool-use] Evaluating: execute_command []
+[2026-09-27T11:16:37.146Z] [INFO] [attention-evaluator] Invoking decision engine (12 local signal(s))
+[2026-09-27T11:16:37.147Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:16:37.214Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:16:37.214Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.6)
+[2026-09-27T11:16:37.215Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries: 1 new directory beyond initial scope (vscode-extension)
+[2026-09-27T11:16:40.442Z] [INFO] [post-tool-use] Observed: execute_command []
+[2026-09-27T11:16:40.446Z] [INFO] [attention-evaluator] Invoking decision engine (13 local signal(s))
+[2026-09-27T11:16:40.446Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:16:40.531Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:16:40.532Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.6)
+[2026-09-27T11:16:43.636Z] [INFO] [pre-tool-use] Evaluating: execute_command []
+[2026-09-27T11:16:43.639Z] [INFO] [attention-evaluator] Invoking decision engine (14 local signal(s))
+[2026-09-27T11:16:43.639Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:16:43.705Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:16:43.706Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.6)
+[2026-09-27T11:16:43.707Z] [INFO] [enforcement] WATCH — exit 0: Scope expanding beyond initial boundaries: 1 new directory beyond initial scope (vscode-extension)
+[2026-09-27T11:16:46.924Z] [INFO] [post-tool-use] Observed: execute_command []
+[2026-09-27T11:16:46.927Z] [INFO] [attention-evaluator] Invoking decision engine (15 local signal(s))
+[2026-09-27T11:16:46.928Z] [INFO] [decision-adapter] Using Laya engine at http://localhost:8000/v1/systemone
+[2026-09-27T11:16:47.006Z] [WARN] [decision-adapter] Primary engine failed: fetch failed — falling back to local rules
+[2026-09-27T11:16:47.006Z] [INFO] [attention-evaluator] Engine decision: WATCH (confidence=0.6)
+[2026-09-27T11:16:49.172Z] [INFO] [stop] Session finalized: 82ba873644c10abcde981bf0798af092

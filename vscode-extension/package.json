@@ -2,7 +2,7 @@
   "name": "bobtention-vscode",
   "displayName": "Bobtention",
   "description": "One-click attention routing and guardrails setup for IBM Bob",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "publisher": "bobtention",
   "license": "MIT",
   "repository": {

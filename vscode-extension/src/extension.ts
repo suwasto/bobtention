@@ -133,16 +133,26 @@ export function activate(context: vscode.ExtensionContext) {
           ...(existingSettings.hooks || {}),
           SessionStart: [
             {
-              type: 'command',
-              command: `node "${sessionStartJs}"`,
-              timeout: 5,
+              matcher: '.*',
+              hooks: [
+                {
+                  type: 'command',
+                  command: `node "${sessionStartJs}"`,
+                  timeout: 5,
+                },
+              ],
             },
           ],
           UserPromptSubmit: [
             {
-              type: 'command',
-              command: `node "${userPromptSubmitJs}"`,
-              timeout: 5,
+              matcher: '.*',
+              hooks: [
+                {
+                  type: 'command',
+                  command: `node "${userPromptSubmitJs}"`,
+                  timeout: 5,
+                },
+              ],
             },
           ],
           PreToolUse: [
@@ -171,9 +181,14 @@ export function activate(context: vscode.ExtensionContext) {
           ],
           Stop: [
             {
-              type: 'command',
-              command: `node "${stopJs}"`,
-              timeout: 5,
+              matcher: '.*',
+              hooks: [
+                {
+                  type: 'command',
+                  command: `node "${stopJs}"`,
+                  timeout: 5,
+                },
+              ],
             },
           ],
         };

@@ -119,16 +119,26 @@ function activate(context) {
                 ...(existingSettings.hooks || {}),
                 SessionStart: [
                     {
-                        type: 'command',
-                        command: `node "${sessionStartJs}"`,
-                        timeout: 5,
+                        matcher: '.*',
+                        hooks: [
+                            {
+                                type: 'command',
+                                command: `node "${sessionStartJs}"`,
+                                timeout: 5,
+                            },
+                        ],
                     },
                 ],
                 UserPromptSubmit: [
                     {
-                        type: 'command',
-                        command: `node "${userPromptSubmitJs}"`,
-                        timeout: 5,
+                        matcher: '.*',
+                        hooks: [
+                            {
+                                type: 'command',
+                                command: `node "${userPromptSubmitJs}"`,
+                                timeout: 5,
+                            },
+                        ],
                     },
                 ],
                 PreToolUse: [
@@ -157,9 +167,14 @@ function activate(context) {
                 ],
                 Stop: [
                     {
-                        type: 'command',
-                        command: `node "${stopJs}"`,
-                        timeout: 5,
+                        matcher: '.*',
+                        hooks: [
+                            {
+                                type: 'command',
+                                command: `node "${stopJs}"`,
+                                timeout: 5,
+                            },
+                        ],
                     },
                 ],
             };
